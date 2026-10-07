@@ -7,6 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Facility extends Model
 {
+        /**
+     * Pilihan kategori. Dipakai form admin dan filter website publik.
+     *
+     * @var array<string, string>
+     */
+    public const CATEGORIES = [
+        'kantor' => 'Kantor Kelurahan',
+        'sekolah' => 'Sekolah',
+        'kesehatan' => 'Fasilitas Kesehatan',
+        'posyandu' => 'Posyandu',
+        'ibadah' => 'Tempat Ibadah',
+        'lapangan' => 'Lapangan',
+        'pasar' => 'Pasar',
+        'lainnya' => 'Lainnya',
+    ];
+    
     protected $fillable = [
         'name',
         'category',

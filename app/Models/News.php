@@ -10,6 +10,17 @@ class News extends Model
 {
     use HasFactory;
 
+        /**
+     * Pilihan kategori. Dipakai form admin dan filter website publik.
+     *
+     * @var array<string, string>
+     */
+    public const CATEGORIES = [
+        'berita' => 'Berita',
+        'pengumuman' => 'Pengumuman',
+        'kegiatan' => 'Kegiatan',
+    ];
+
     protected $fillable = [
         'title',
         'slug',
