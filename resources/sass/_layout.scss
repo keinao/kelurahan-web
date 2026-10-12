@@ -1,0 +1,809 @@
+.kn-site-nav {
+    position: sticky;
+    z-index: 1040;
+    top: 0;
+    background-color: $warm-ivory;
+    border-bottom: 1px solid rgba($charcoal, .12);
+
+    .container { min-height: 76px; }
+}
+
+.kn-wordmark {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    gap: .75rem;
+    color: $deep-forest;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    line-height: 1.2;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover { color: $earth-text; }
+}
+
+.kn-wordmark__logo { width: 40px; height: 40px; flex: 0 0 auto; object-fit: contain; }
+.kn-nav-toggle { width: 48px; height: 44px; border: 1px solid rgba($deep-forest, .35); border-radius: .375rem; }
+.kn-nav-link {
+    position: relative;
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+    padding: .55rem .7rem !important;
+    color: $charcoal;
+    font-size: .9rem;
+
+    &::after {
+        position: absolute;
+        right: .7rem;
+        bottom: .25rem;
+        left: .7rem;
+        height: 1px;
+        background: $deep-forest;
+        content: "";
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .2s ease;
+    }
+    &:hover, &.active { color: $deep-forest; }
+    &:hover::after, &.active::after { transform: scaleX(1); }
+}
+
+.kn-main { flex: 1 0 auto; }
+.kn-home-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(3.5rem, 8vw, 7rem) 0;
+    background: $warm-ivory;
+
+    &.kn-batik-texture::before {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        background-image: var(--kn-batik-pattern, none);
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: min(54vw, 760px) auto;
+        content: "";
+        opacity: .2;
+        pointer-events: none;
+        mask-image: linear-gradient(90deg, transparent 28%, rgba(0, 0, 0, .45) 58%, #000 100%);
+    }
+}
+.kn-home-hero__content { max-width: 42rem; }
+.kn-home-hero__title { max-width: 15ch; margin: 0; font-size: clamp(2.8rem, 5.5vw, 4.75rem); font-weight: 500; }
+.kn-home-hero__lead { max-width: 54ch; margin: 1.25rem 0 0; color: $muted-gray; font-size: clamp(1rem, 2vw, 1.2rem); }
+.kn-home-hero__visual { position: relative; max-width: 38rem; margin-left: auto; padding: clamp(.5rem, 2vw, 1.25rem); }
+.kn-home-hero__visual .kn-static-image { box-shadow: 0 1.25rem 3.5rem rgba($charcoal, .12); }
+.kn-home-hero__caption { margin-top: .75rem; color: $muted-gray; font-size: .82rem; text-align: right; }
+.kn-home-explore { background: $sand; }
+.kn-home-link-card {
+    display: flex;
+    min-height: 100%;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    color: $charcoal;
+    background: $warm-ivory;
+    border: 1px solid rgba($charcoal, .1);
+    border-radius: .375rem;
+    text-decoration: none;
+    transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+
+    &:hover { color: $deep-forest; border-color: rgba($deep-forest, .4); box-shadow: $box-shadow; transform: translateY(-2px); }
+    strong, small { display: block; }
+    strong { color: $deep-forest; }
+    small { margin-top: .25rem; color: $muted-gray; line-height: 1.45; }
+}
+.kn-home-link-card__icon { display: grid; width: 2.75rem; height: 2.75rem; flex: 0 0 auto; place-items: center; color: $deep-forest; background: $white; border-radius: 50%; font-size: 1.15rem; }
+.kn-home-link-card__arrow { margin-left: auto; color: $earth-text; }
+.kn-home-news-card, .kn-home-potential-card { padding: 1.5rem; border: 1px solid rgba($charcoal, .12); border-radius: .375rem; }
+.kn-home-news-card h3, .kn-home-potential-card h3 { margin: 0 0 .75rem; color: $deep-forest; font-size: clamp(1.45rem, 2.4vw, 1.8rem); }
+.kn-home-news-card > p:not(.kn-home-news-card__meta), .kn-home-potential-card > p:not(.kn-eyebrow) { color: $muted-gray; }
+.kn-home-news-card__meta { color: $earth-text; font-size: .8rem; font-weight: 600; }
+.kn-home-potential { background: $sand; }
+
+.kn-page-header {
+    padding: clamp(3.25rem, 8vw, 7rem) 0 clamp(2rem, 5vw, 3.5rem);
+    border-bottom: 1px solid rgba($charcoal, .12);
+
+    h1 { max-width: 16ch; margin: 0; font-size: clamp(2.8rem, 7vw, 5.5rem); font-weight: 500; }
+}
+.kn-eyebrow { margin-bottom: .85rem; color: $earth-text; font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.kn-page-lead { max-width: 62ch; margin: 1.25rem 0 0; color: $muted-gray; font-size: clamp(1rem, 2vw, 1.2rem); }
+.kn-back-link { display: inline-flex; min-height: 44px; align-items: center; margin-bottom: 1.5rem; color: $deep-forest; font-weight: 600; text-decoration: none; &::before { margin-right: .5rem; content: "â†"; } }
+.kn-section { padding: clamp(3.5rem, 7vw, 6.5rem) 0; }
+.kn-section--white { background: $white; }
+.kn-section--sand { background: $sand; }
+.kn-section-header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem 2rem; margin-bottom: 2rem; h2 { max-width: 18ch; margin: 0; font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 500; } }
+.kn-section-header__lead { max-width: 55ch; margin: .75rem 0 0; color: $muted-gray; }
+.kn-pattern-ribbon { height: 8px; background-color: $sand; }
+.kn-pattern-ribbon--batik { background-image: var(--kn-batik-pattern); background-repeat: repeat-x; background-position: center 43%; background-size: 180px auto; opacity: .28; }
+
+// Tekstur batik dipakai selektif; hero Beranda boleh menggunakannya dengan kontras rendah.
+.kn-batik-texture { position: relative; isolation: isolate; }
+.kn-batik-texture::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-image: var(--kn-batik-pattern, none);
+    background-position: center;
+    background-repeat: repeat;
+    background-size: clamp(280px, 30vw, 440px) auto;
+    content: "";
+    opacity: .14;
+    pointer-events: none;
+}
+.kn-page-header.kn-batik-texture::before {
+    background-position: right center;
+    background-size: clamp(300px, 36vw, 520px) auto;
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .2) 28%, #000 76%);
+}
+.kn-page-header--profil.kn-batik-texture::before { background-size: clamp(340px, 38vw, 560px) auto; opacity: .18; }
+.kn-profile-overview { background: $white; }
+.kn-profile-copy { max-width: 62ch; color: $muted-gray; font-size: 1.025rem; line-height: 1.8; }
+.kn-profile-visual { max-width: 38rem; margin-left: auto; padding: clamp(.5rem, 2vw, 1.25rem); }
+.kn-profile-visual .kn-static-image { box-shadow: 0 1rem 2.75rem rgba($charcoal, .1); }
+.kn-profile-caption { margin-top: .75rem; color: $muted-gray; font-size: .82rem; text-align: right; }
+.kn-profile-region { background: $sand; }
+.kn-profile-fact { padding: 1.2rem 1.25rem; background: $warm-ivory; border: 1px solid rgba($charcoal, .1); border-left: 2px solid $earth-brown; border-radius: .375rem; }
+.kn-profile-fact dt { margin-bottom: .4rem; color: $earth-text; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.kn-profile-fact dd { margin: 0; color: $deep-forest; font-weight: 600; }
+.kn-profile-geography { padding: clamp(1.25rem, 3vw, 2rem); background: $warm-ivory; border-radius: .375rem; }
+.kn-profile-geography h3, .kn-profile-boundaries h3 { margin-bottom: 1rem; color: $deep-forest; font-size: 1.5rem; }
+.kn-profile-geography p { max-width: 70ch; color: $muted-gray; line-height: 1.8; }
+.kn-profile-story { background: $white; }
+.kn-profile-story-card { padding: clamp(1.25rem, 3vw, 2rem); background: $warm-ivory; border: 1px solid rgba($charcoal, .1); border-radius: .375rem; }
+.kn-profile-story-card h3 { margin-bottom: 1rem; color: $deep-forest; font-size: 1.65rem; }
+@media (max-width: 575.98px) {
+    .kn-batik-texture::before { background-size: 280px auto; opacity: .1; }
+    .kn-page-header.kn-batik-texture::before { background-size: 240px auto; }
+    .kn-page-header--profil.kn-batik-texture::before { background-size: 280px auto; opacity: .14; }
+}
+@media (max-width: 767.98px) {
+    .kn-home-hero { padding: 3rem 0 3.5rem; }
+    .kn-home-hero.kn-batik-texture::before { background-position: right top; background-size: 320px auto; opacity: .14; }
+    .kn-home-hero__title { max-width: 15ch; }
+    .kn-home-hero__visual { margin: 0 auto; }
+}
+
+.kn-site-footer { padding-top: 3rem; color: $charcoal; background: $white; border-top: 1px solid rgba($charcoal, .12); h2, h3 { color: $deep-forest; } a { color: $deep-forest; } }
+.kn-footer-heading { margin-bottom: 1rem; font-family: $font-family-sans-serif; font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.kn-footer-list { display: grid; gap: .45rem; margin: 0; padding: 0; list-style: none; a { display: inline-flex; min-height: 36px; align-items: center; } }
+.kn-footer-bottom { padding: 1rem 0; color: $muted-gray; font-size: .82rem; border-top: 1px solid rgba($charcoal, .12); }
+
+@media (max-width: 991.98px) {
+    .kn-site-nav .navbar-collapse { padding: .5rem 0 1rem; }
+    .kn-nav-link::after { right: auto; width: 2rem; }
+}
+
+@media (max-width: 991.98px) {
+    .kn-site-nav .navbar-collapse.kn-batik-menu {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        padding: .5rem 0 1rem;
+        background-color: $warm-ivory;
+        border-top: 1px solid rgba($charcoal, .08);
+
+        &::before {
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            background-image: var(--kn-batik-pattern, none);
+            background-position: right center;
+            background-repeat: repeat;
+            background-size: clamp(300px, 65vw, 400px) auto;
+            content: "";
+            opacity: .24;
+            pointer-events: none;
+        }
+    }
+
+    .kn-site-nav .navbar-collapse.kn-batik-menu .navbar-nav {
+        position: relative;
+    }
+}
+// Palet aksen Kinilow: hijau daun, tanah, dan cahaya hangat.
+$kinilow-sage: #E4EBE2;
+$kinilow-leaf: #6F876B;
+$kinilow-clay: #F1E1D5;
+$kinilow-sun: #F2E7C8;
+
+.kn-home-hero {
+    background:
+        radial-gradient(ellipse at 92% 14%, rgba($kinilow-sun, .78), transparent 28rem),
+        linear-gradient(115deg, $warm-ivory 0%, #F5F0E5 56%, $kinilow-sage 100%);
+}
+.kn-home-hero__content { position: relative; z-index: 1; }
+.kn-home-hero__content .kn-eyebrow { display: inline-flex; align-items: center; padding: .4rem .75rem; background: rgba($kinilow-sun, .72); border-radius: 999px; }
+
+.kn-home-hero__visual .kn-static-image { position: relative; z-index: 1; border: 5px solid rgba($white, .82); }
+
+.kn-home-explore { background: linear-gradient(135deg, $kinilow-sage 0%, #EEF0E6 52%, $sand 100%); }
+.kn-home-link-card { background: rgba($warm-ivory, .92); border-color: rgba($deep-forest, .15); }
+.kn-home-explore .row > div:nth-child(3n + 1) .kn-home-link-card__icon { color: $deep-forest; background: $kinilow-sage; }
+.kn-home-explore .row > div:nth-child(3n + 2) .kn-home-link-card__icon { color: $earth-text; background: $kinilow-sun; }
+.kn-home-explore .row > div:nth-child(3n) .kn-home-link-card__icon { color: #80553D; background: $kinilow-clay; }
+.kn-home-link-card:hover { background: $white; }
+
+.kn-page-header {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: linear-gradient(112deg, #F7F4ED 0%, #F0F1E7 62%, #E4EBE2 100%);
+}
+.kn-page-header .kn-eyebrow { display: inline-flex; padding: .38rem .7rem; background: rgba($kinilow-sun, .68); border-radius: 999px; }
+.kn-section--white { background: linear-gradient(145deg, $white 0%, #FBF9F4 100%); }
+.kn-section--sand { background: linear-gradient(135deg, $sand 0%, #F2EBDD 52%, #E9EBDD 100%); }
+.kn-section-header .kn-eyebrow { color: $earth-text; }
+
+.kn-home-news-card, .kn-home-potential-card {
+    position: relative;
+    overflow: hidden;
+    background: $white;
+    box-shadow: 0 .5rem 1.5rem rgba($charcoal, .045);
+    transition: transform .18s ease, box-shadow .18s ease;
+    &::before { position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, $muted-sage, $natural-bamboo, $earth-brown); content: ""; }
+    &:hover { box-shadow: 0 .8rem 2rem rgba($charcoal, .09); transform: translateY(-3px); }
+}
+.kn-home-news-card__meta { display: inline-flex; align-items: center; gap: .4rem; padding: .25rem .55rem; background: #F4EBD8; border-radius: 999px; }
+.kn-home-potential-card { background: linear-gradient(150deg, $white 0%, #F2F4EE 100%); }
+.kn-profile-fact { background: linear-gradient(110deg, $warm-ivory, #F3EBDD); border-left-width: 4px; }
+.kn-static-image { box-shadow: 0 .8rem 2rem rgba($charcoal, .08); }
+.kn-empty-state { background: linear-gradient(125deg, $white, #F4F1E8); border-left: 4px solid $muted-sage; }
+
+.kn-site-footer {
+    color: rgba($warm-ivory, .86);
+    background: linear-gradient(125deg, #263C31 0%, $deep-forest 62%, #405A45 100%);
+    border-top: 4px solid $natural-bamboo;
+    h2, h3 { color: $warm-ivory; }
+    a { color: #E5D6AE; &:hover { color: $white; } }
+}
+.kn-footer-bottom { color: rgba($warm-ivory, .68); border-top-color: rgba($warm-ivory, .2); }
+.kn-footer-heading { color: #E5D6AE; }
+
+@media (max-width: 575.98px) {
+    .kn-home-hero { background: radial-gradient(ellipse at 90% 8%, rgba($kinilow-sun, .72), transparent 19rem), linear-gradient(150deg, $warm-ivory, #E8EDE4); }
+
+}
+
+
+// Navbar dan footer menjadi bingkai visual yang konsisten.
+.kn-site-nav {
+    background: $deep-forest;
+    border-top: 3px solid $natural-bamboo;
+    border-bottom-color: rgba($warm-ivory, .18);
+    .kn-wordmark { color: $warm-ivory; &:hover { color: #E5D6AE; } }
+    .kn-nav-link {
+        color: rgba($warm-ivory, .9);
+        &::after { background: $natural-bamboo; }
+        &:hover, &.active { color: #E5D6AE; }
+    }
+    .kn-nav-toggle { border-color: rgba($warm-ivory, .45); }
+    .navbar-toggler-icon { filter: invert(1); }
+}
+.kn-site-footer { background: $deep-forest; border-top: 3px solid $natural-bamboo; }
+@media (max-width: 991.98px) {
+    .kn-site-nav .navbar-collapse.kn-batik-menu { background-color: $deep-forest; }
+    .kn-site-nav .navbar-collapse.kn-batik-menu::before { opacity: .18; }
+}
+@media (max-width: 991.98px) {
+    .kn-site-nav .navbar-collapse.kn-batik-menu {
+        padding: .75rem 0 1rem;
+        background-color: $deep-forest;
+        border-top: 1px solid rgba($warm-ivory, .18);
+
+        &::before {
+            background-position: right bottom;
+            background-repeat: no-repeat;
+            background-size: clamp(220px, 64vw, 300px) auto;
+            opacity: .1;
+        }
+
+        .navbar-nav {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: .35rem .5rem;
+        }
+
+        .kn-nav-link {
+            min-height: 48px;
+            padding: .65rem .6rem !important;
+            border: 1px solid rgba($warm-ivory, .12);
+            border-left: 2px solid transparent;
+            border-radius: .35rem;
+            font-size: .9rem;
+            line-height: 1.25;
+            transition: background-color .18s ease, border-color .18s ease;
+
+            &::after { display: none; }
+            &:hover { color: $warm-ivory; background: rgba($warm-ivory, .08); }
+            &.active { color: #E5D6AE; background: rgba($warm-ivory, .12); border-left-color: $natural-bamboo; }
+        }
+    }
+
+    .kn-site-nav .kn-nav-toggle {
+        width: 44px;
+        height: 44px;
+        padding: .5rem;
+        background: rgba($warm-ivory, .08);
+        border: 1px solid rgba($warm-ivory, .36);
+        border-radius: .5rem;
+        box-shadow: none;
+
+        &:hover { background: rgba($warm-ivory, .16); }
+        &:focus-visible { outline-color: $natural-bamboo; }
+    }
+}
+@media (max-width: 359.98px) {
+    .kn-site-nav .navbar-collapse.kn-batik-menu .navbar-nav { grid-template-columns: 1fr; }
+}
+@media (max-width: 991.98px) {
+    .kn-site-nav .navbar-collapse.kn-batik-menu::before {
+        background-position: right bottom;
+        background-repeat: no-repeat;
+        background-size: clamp(210px, 56vw, 260px) auto;
+        opacity: .08;
+        mask-image: linear-gradient(90deg, transparent 8%, #000 100%);
+    }
+
+    .kn-site-nav .navbar-collapse.kn-batik-menu .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .kn-site-nav .navbar-collapse.kn-batik-menu .kn-nav-link {
+        min-height: 44px;
+        padding: .55rem .75rem !important;
+        color: rgba($warm-ivory, .92);
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid rgba($warm-ivory, .1);
+        border-left: 2px solid transparent;
+        border-radius: 0;
+        font-size: .92rem;
+
+        &::after { display: none; }
+        &:hover { color: $warm-ivory; background: rgba($warm-ivory, .06); }
+        &.active { color: #E5D6AE; background: rgba($warm-ivory, .08); border-left-color: $natural-bamboo; }
+    }
+
+    .kn-site-nav .navbar-collapse.kn-batik-menu .nav-item:last-child .kn-nav-link { border-bottom-color: transparent; }
+}
+@media (max-width: 991.98px) {
+    .kn-site-nav .navbar-collapse.kn-batik-menu::before {
+        background-position: right bottom;
+        background-repeat: no-repeat;
+        background-size: clamp(220px, 58vw, 270px) auto;
+        opacity: .1;
+        mask-image: radial-gradient(ellipse 72% 62% at 88% 82%, #000 0%, rgba(0, 0, 0, .78) 42%, transparent 100%);
+    }
+}
+
+// Batik hero mengisi seluruh area sambutan, dengan kontras rendah.
+.kn-home-hero.kn-batik-texture::before {
+    background-position: center;
+    background-repeat: repeat;
+    background-size: clamp(340px, 32vw, 460px) auto;
+    opacity: .09;
+    mask-image: none;
+}
+@media (max-width: 767.98px) {
+    .kn-home-hero.kn-batik-texture::before {
+        background-position: center;
+        background-size: 320px auto;
+        opacity: .075;
+    }
+}
+
+// Batik hero menjadi tekstur latar yang sangat ringan, bukan fokus visual.
+.kn-home-hero.kn-batik-texture::before { opacity: .04; }
+@media (max-width: 767.98px) {
+    .kn-home-hero.kn-batik-texture::before { opacity: .03; }
+}
+
+// Penuhi bidang menu dengan tekstur tipis agar tidak terlihat sebagai panel tempelan.
+.kn-wordmark { flex-shrink: 0; white-space: nowrap; }
+.kn-wordmark__text { white-space: nowrap; }
+@media (max-width: 991.98px) {
+    .kn-site-nav .navbar-collapse.kn-batik-menu::before {
+        background-position: center top;
+        background-repeat: repeat-y;
+        background-size: 100% auto;
+        opacity: .045;
+        mask-image: none;
+    }
+}
+
+// Komposisi foto hero: pemandangan utama dengan anyaman sebagai aksen.
+.kn-home-hero__visual {
+    position: relative;
+    width: 100%;
+    max-width: 38rem;
+    margin-left: auto;
+    padding: .35rem .35rem 3.8rem 1.7rem;
+}
+.kn-home-hero__photo { margin: 0; }
+.kn-home-hero__photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 4px solid rgba($warm-ivory, .96);
+    border-radius: 1rem;
+    box-shadow: 0 .9rem 2.2rem rgba($charcoal, .16);
+}
+.kn-home-hero__photo figcaption {
+    margin-top: .5rem;
+    color: $muted-gray;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-align: right;
+    text-transform: uppercase;
+}
+.kn-home-hero__photo--landscape { width: 100%; }
+.kn-home-hero__photo--landscape img {
+    aspect-ratio: 16 / 10;
+    object-position: center 54%;
+}
+.kn-home-hero__photo--craft {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 45%;
+    padding: .35rem .35rem .15rem;
+    background: $warm-ivory;
+    border: 1px solid rgba($charcoal, .14);
+    border-radius: .9rem;
+    box-shadow: 0 .75rem 1.8rem rgba($charcoal, .14);
+}
+.kn-home-hero__photo--craft img {
+    aspect-ratio: 4 / 3;
+    object-position: 36% center;
+    border-width: 0;
+    border-radius: .6rem;
+    box-shadow: none;
+}
+.kn-home-hero__photo--craft figcaption {
+    margin: .4rem .2rem .15rem;
+    font-size: .68rem;
+    text-align: center;
+}
+@media (max-width: 991.98px) {
+    .kn-home-hero__visual { margin: 0 auto; }
+}
+@media (max-width: 575.98px) {
+    .kn-home-hero__visual { padding: .2rem .15rem 3rem .7rem; }
+    .kn-home-hero__photo--landscape img { aspect-ratio: 3 / 2; }
+    .kn-home-hero__photo--craft { width: 46%; }
+}
+
+// Hero desktop: foto penuh dengan transisi ivory; mobile memakai blok bertumpuk.
+.kn-home-hero--kinilow {
+    position: relative;
+    display: flex;
+    min-height: clamp(36rem, 72vh, 48rem);
+    align-items: center;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(4rem, 8vw, 6.5rem) 0;
+    background: $warm-ivory;
+
+    &::before {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        background: linear-gradient(90deg, rgba($warm-ivory, .98) 0%, rgba($warm-ivory, .92) 23%, rgba($warm-ivory, .76) 39%, rgba($warm-ivory, .38) 54%, rgba($warm-ivory, 0) 72%);
+        content: '';
+    }
+
+    &::after { display: none; content: none; }
+}
+.kn-home-hero--kinilow .kn-home-hero__text-wrap {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+.kn-home-hero--kinilow .kn-home-hero__content {
+    width: 100%;
+    max-width: 34rem;
+    color: #252923;
+}
+.kn-home-hero--kinilow .kn-eyebrow {
+    display: inline-flex;
+    margin: 0 0 1rem;
+    padding: .4rem .75rem;
+    color: $deep-forest;
+    background: rgba($natural-bamboo, .82);
+    border-radius: 999px;
+}
+.kn-home-hero--kinilow .kn-home-hero__title {
+    max-width: 13ch;
+    margin: 0;
+    color: #252923;
+    font-size: clamp(2.7rem, 4.6vw, 4rem);
+    line-height: 1;
+}
+.kn-home-hero--kinilow .kn-home-hero__lead {
+    max-width: 54ch;
+    margin: 1rem 0 0;
+    color: #252923;
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+}
+.kn-home-hero--kinilow .kn-home-hero__content .kn-arrow-link {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    padding: .7rem 1.2rem;
+    color: $warm-ivory;
+    background: $deep-forest;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color .18s ease, transform .18s ease;
+
+    &:hover { color: $warm-ivory; background: #263C31; transform: translateY(-1px); }
+}
+.kn-home-hero--kinilow .kn-home-hero__media-wrap {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    padding: 0;
+}
+.kn-home-hero__backdrop {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 56%;
+}
+.kn-home-hero__flourish {
+    display: flex;
+    width: 9rem;
+    align-items: center;
+    gap: .8rem;
+    margin: 0 0 1.25rem .15rem;
+
+    &::before {
+        width: .8rem;
+        height: 1.2rem;
+        flex: 0 0 auto;
+        background: $muted-sage;
+        border-radius: 100% 0 100% 0;
+        content: '';
+        transform: rotate(-35deg);
+    }
+
+    &::after { height: 1px; flex: 1; background: rgba($deep-forest, .42); content: ''; }
+}
+.kn-home-hero__wave {
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: clamp(1.5rem, 4vw, 3.25rem);
+    fill: $kinilow-sage;
+    pointer-events: none;
+}
+@media (max-width: 991.98px) {
+    .kn-home-hero--kinilow {
+        display: block;
+        min-height: 0;
+        padding: clamp(1.5rem, 6vw, 2.5rem) 0 2rem;
+        background: $warm-ivory;
+    }
+
+    .kn-home-hero--kinilow::before,
+    .kn-home-hero__wave { display: none; }
+    .kn-home-hero--kinilow .kn-home-hero__text-wrap { position: relative; z-index: 1; }
+    .kn-home-hero--kinilow .row { row-gap: 1.25rem; }
+    .kn-home-hero--kinilow .kn-home-hero__content { max-width: none; }
+    .kn-home-hero--kinilow .kn-home-hero__title { font-size: clamp(2.45rem, 9vw, 3.65rem); }
+    .kn-home-hero__flourish { display: none; }
+    .kn-home-hero--kinilow .kn-home-hero__media-wrap {
+        position: relative;
+        z-index: 0;
+        inset: auto;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-top: 1.25rem;
+        padding: 0 12px;
+    }
+    .kn-home-hero__backdrop {
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: 72% center;
+        border-radius: 8px;
+    }
+}
+
+// Galeri menggunakan permukaan polos; tekstur batik tetap dipakai di bagian website lain.
+.kn-page-header--gallery {
+    background: $warm-ivory;
+
+    &::before { display: none; }
+}
+
+.kn-page-header__intro {
+    max-width: 62ch;
+    margin: 1rem 0 0;
+    color: $muted-gray;
+    font-size: clamp(1rem, 1.6vw, 1.125rem);
+    line-height: 1.65;
+}
+
+.kn-gallery--members { background: $white; }
+.kn-gallery--mentors { background: #F3F0E8; }
+.kn-gallery--documentation { background: #FBF9F4; }
+
+.kn-gallery-group + .kn-gallery-group { margin-top: clamp(2.75rem, 5vw, 4rem); }
+
+.kn-gallery-group__heading {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: .75rem;
+    border-bottom: 1px solid rgba($charcoal, .13);
+
+    h3 {
+        margin: 0;
+        color: $deep-forest;
+        font-size: clamp(1.25rem, 2vw, 1.55rem);
+        font-weight: 600;
+    }
+
+    &::after {
+        height: 1px;
+        flex: 1;
+        background: linear-gradient(90deg, rgba($deep-forest, .2), transparent);
+        content: "";
+    }
+}
+
+.kn-gallery-member-card {
+    height: 100%;
+    overflow: hidden;
+    background: $white;
+    border: 1px solid rgba($charcoal, .12);
+    border-radius: .5rem;
+    box-shadow: 0 .35rem 1.2rem rgba($charcoal, .045);
+    transition: transform .2s ease, box-shadow .2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 .65rem 1.5rem rgba($charcoal, .09);
+    }
+}
+
+.kn-gallery-member-card__portrait {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: #F0EEE7;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 35%;
+    }
+}
+
+.kn-gallery-member-card__placeholder {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 120px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+    color: #74766D;
+    background: #F0EEE7;
+    text-align: center;
+
+    .bi { color: #8A8D82; font-size: clamp(2rem, 4vw, 2.75rem); }
+    span { max-width: 14ch; padding: 0 .5rem; font-size: .75rem; line-height: 1.4; }
+}
+
+.kn-gallery-member-card__body {
+    display: flex;
+    min-height: 118px;
+    flex-direction: column;
+    padding: 1rem;
+
+    h4 {
+        margin: 0 0 .55rem;
+        color: #252923;
+        font-size: clamp(.9rem, 1.15vw, 1rem);
+        font-weight: 650;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    p {
+        margin: auto 0 0;
+        color: $earth-text;
+        font-size: .8rem;
+        line-height: 1.45;
+    }
+}
+
+.kn-gallery-mentor-card {
+    height: 100%;
+    padding: clamp(1.25rem, 2.4vw, 1.75rem);
+    background: rgba($white, .78);
+    border: 1px solid rgba($charcoal, .12);
+    border-top: 3px solid $muted-sage;
+    border-radius: .5rem;
+
+    p {
+        margin: 0 0 .75rem;
+        color: $earth-text;
+        font-size: .72rem;
+        font-weight: 700;
+        letter-spacing: .1em;
+        line-height: 1.45;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        margin: 0;
+        color: $deep-forest;
+        font-size: clamp(1rem, 1.35vw, 1.15rem);
+        font-weight: 600;
+        line-height: 1.55;
+        overflow-wrap: anywhere;
+    }
+}
+
+.kn-gallery-documentation__link {
+    display: block;
+    overflow: hidden;
+    background: $white;
+    border: 1px solid rgba($charcoal, .12);
+    border-radius: .5rem;
+}
+
+.kn-gallery-documentation__image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #F0EEE7;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .25s ease;
+    }
+
+    .kn-gallery-documentation__link:hover & img { transform: scale(1.025); }
+}
+
+.kn-gallery--documentation .kn-empty-state {
+    padding: clamp(1.25rem, 3vw, 2rem);
+    background: $white;
+    border-left: 3px solid $muted-sage;
+}
+
+@media (max-width: 575.98px) {
+    .kn-page-header--gallery { padding-top: 2.5rem; }
+    .kn-gallery-member-card__body { min-height: 112px; padding: .8rem; }
+    .kn-gallery-member-card__body h4 { font-size: .9rem; }
+    .kn-gallery-member-card__body p { font-size: .76rem; }
+}

@@ -1,6 +1,7 @@
-// Bootstrap 5 (tema default, warna final ditentukan di Phase 5)
+@import "variables";
 @import "bootstrap/scss/bootstrap";
-
-// Bootstrap Icons
 $bootstrap-icons-font-dir: "bootstrap-icons/font/fonts";
 @import "bootstrap-icons/font/bootstrap-icons";
+@import "base";
+@import "layout";
+@import "components";

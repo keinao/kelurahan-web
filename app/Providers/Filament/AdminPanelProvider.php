@@ -16,6 +16,7 @@ use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\HtmlString;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 class AdminPanelProvider extends PanelProvider
@@ -26,7 +27,16 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->brandName('Administrasi Website Kelurahan Kinilow')
+            ->brandLogo(new HtmlString(
+                '<span style="display: flex; align-items: center; gap: .75rem; white-space: nowrap;">' .
+                '<img src="' . e(asset('images/patterns/logo-tomohon.png')) . '" alt="" style="display: block; width: 2.5rem; height: 2.5rem; object-fit: contain;">' .
+                '<span style="font-size: .875rem; font-weight: 600; line-height: 1.2;">Administrasi Website<br>Kelurahan Kinilow</span>' .
+                '</span>'
+            ))
+            ->brandLogoHeight('3rem')
             ->login()
+            ->profile()
             ->colors([
                 'primary' => Color::Amber,
             ])
