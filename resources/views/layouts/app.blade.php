@@ -7,6 +7,10 @@
 
     <title>@yield('title', 'Kelurahan Kinilow')</title>
     <meta name="description" content="@yield('meta_description', 'Website resmi Kelurahan Kinilow, Kecamatan Tomohon Utara, Kota Tomohon')">
+    <meta property="og:title" content="@yield('og_title', 'Website Kelurahan Kinilow')">
+    <meta property="og:description" content="@yield('og_description', 'Website resmi Kelurahan Kinilow')">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request()->url() }}">
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>

@@ -1,0 +1,118 @@
+{
+  "lurah": {
+    "nama": "Boy S. Undap, SE",
+    "jabatan": "Lurah"
+  },
+  "seksi": [
+    {
+      "kepala": {
+        "nama": "Alfian M.L. Mantiaha, S.Sos",
+        "jabatan": "Kasie Kesejahteraan Rakyat"
+      },
+      "operator": [
+        {
+          "nama": "Lady Calvilia Esmeralda Mandagi",
+          "jabatan": "Operator Layanan Operasional (Seksi Kesejahteraan Rakyat)"
+        }
+      ]
+    },
+    {
+      "kepala": {
+        "nama": "Marcen T. Pusung, S.Sos",
+        "jabatan": "Kasie Pembangunan dan Keuangan"
+      },
+      "operator": []
+    },
+    {
+      "kepala": {
+        "nama": "Aldrine A. Paat, S.Sos",
+        "jabatan": "Kasie Pemerintahan"
+      },
+      "operator": [
+        {
+          "nama": "Chrisye Lesly Polakitan",
+          "jabatan": "Operator Layanan Operasional (Seksi Pemerintahan)"
+        }
+      ]
+    }
+  ],
+  "lingkungan": [
+    {
+      "nomor": "I",
+      "kaling": {
+        "nama": "Jemmy Hehamony",
+        "jabatan": "Kepala Lingkungan"
+      },
+      "wakaling": {
+        "nama": "Salma Darsan",
+        "jabatan": "Wakil Kepala Lingkungan"
+      }
+    },
+    {
+      "nomor": "II",
+      "kaling": {
+        "nama": "Marten Pangalila",
+        "jabatan": "Kepala Lingkungan"
+      },
+      "wakaling": {
+        "nama": "Jefry Kaunang",
+        "jabatan": "Wakil Kepala Lingkungan"
+      }
+    },
+    {
+      "nomor": "III",
+      "kaling": {
+        "nama": "Marry Polakitan",
+        "jabatan": "Kepala Lingkungan"
+      },
+      "wakaling": {
+        "nama": "Max Lumanauw",
+        "jabatan": "Wakil Kepala Lingkungan"
+      }
+    },
+    {
+      "nomor": "IV",
+      "kaling": {
+        "nama": "Malik Bambang",
+        "jabatan": "Kepala Lingkungan"
+      },
+      "wakaling": {
+        "nama": "Tommy Lewik",
+        "jabatan": "Wakil Kepala Lingkungan"
+      }
+    },
+    {
+      "nomor": "V",
+      "kaling": {
+        "nama": "Agus Pondaag",
+        "jabatan": "Kepala Lingkungan"
+      },
+      "wakaling": {
+        "nama": "Yourgan Parengkuan",
+        "jabatan": "Wakil Kepala Lingkungan"
+      }
+    },
+    {
+      "nomor": "VI",
+      "kaling": {
+        "nama": "Susan Martje Pusung",
+        "jabatan": "Kepala Lingkungan"
+      },
+      "wakaling": {
+        "nama": "Abdon Nongko",
+        "jabatan": "Wakil Kepala Lingkungan"
+      }
+    },
+    {
+      "nomor": "VII",
+      "kaling": {
+        "nama": "Virgina Randang",
+        "jabatan": "Kepala Lingkungan"
+      },
+      "wakaling": {
+        "nama": "Yuan Warongan",
+        "jabatan": "Wakil Kepala Lingkungan"
+      }
+    }
+  ]
+}

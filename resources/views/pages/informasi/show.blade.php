@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', $berita->title . ' — Kelurahan Kinilow')
-@section('meta_description', Str::limit(strip_tags($berita->content), 160))
+@section('meta_description', $metaDescription)
 
 @section('content')
     <x-page-header :title="$berita->title" :subtitle="$berita->published_at->translatedFormat('d F Y')" />
@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <a href="{{ route('informasi.index') }}" class="kn-back-link">Kembali ke Informasi</a>
+                    <a href="{{ route('informasi.index') }}" class="kn-back-link">Kembali ke Layanan Publik</a>
 
                     <article class="kn-prose">
                         @if($berita->image)
@@ -21,7 +21,7 @@
                             </figure>
                         @endif
 
-                        <div>{!! nl2br(e($berita->content)) !!}</div>
+                        <div>{!! $isiAman !!}</div>
                     </article>
                 </div>
             </div>

@@ -21,6 +21,9 @@ class Facility extends Model
         'lapangan' => 'Lapangan',
         'pasar' => 'Pasar',
         'lainnya' => 'Lainnya',
+        'penginapan' => 'Penginapan',
+        'kuliner' => 'Kuliner',
+        'wisata-alam' => 'Wisata Alam',
     ];
     
     protected $fillable = [
@@ -30,12 +33,16 @@ class Facility extends Model
         'description',
         'map_url',
         'is_active',
+        'slug',
+        'photos',
+        'subtitle',
     ];
 
     protected function casts(): array
     {
         return [
             'is_active' => 'boolean',
+            'photos' => 'array',
         ];
     }
 

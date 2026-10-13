@@ -4,8 +4,6 @@ namespace Tests\Feature;
 
 use App\Models\Demographic;
 use App\Models\Facility;
-use App\Models\Official;
-use App\Models\Potential;
 use App\Models\VillageProfile;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -14,148 +12,117 @@ class PublicContentPagesTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_potential_pages_show_only_active_non_example_records(): void
+    public function test_about_page_contains_government_structure_and_regions(): void
     {
-        $valid = Potential::create([
-            'name' => 'Kebun Produktif',
-            'slug' => 'kebun-produktif',
-            'category' => 'pertanian',
-            'description' => 'Uraian yang diisi pengelola.',
-            'location' => 'Lingkungan I',
-            'is_active' => true,
-        ]);
-        Potential::create([
-            'name' => 'Potensi Contoh',
-            'slug' => 'potensi-contoh-test',
-            'category' => 'lainnya',
-            'description' => '[DATA CONTOH] Jangan ditampilkan.',
-            'is_active' => true,
-        ]);
-        Potential::create([
-            'name' => 'Potensi Nonaktif',
-            'slug' => 'potensi-nonaktif-test',
-            'category' => 'lainnya',
-            'is_active' => false,
-        ]);
-
-        $this->get(route('potensi.index'))
+        $this->get(route('tentang'))
             ->assertOk()
-            ->assertSee($valid->name)
-            ->assertDontSee('Potensi Contoh')
-            ->assertDontSee('Potensi Nonaktif');
-
-        $this->get(route('potensi.show', $valid->slug))
-            ->assertOk()
-            ->assertSee('Uraian yang diisi pengelola.');
-
-        $this->get(route('potensi.show', 'potensi-nonaktif-test'))->assertNotFound();
-        $this->get(route('potensi.show', 'potensi-contoh-test'))->assertNotFound();
+            ->assertSee('Gambaran Umum')
+            ->assertDontSee('Tomohon Maju, Berdaya Saing, dan Sejahtera')
+            ->assertDontSee('Menjadikan Tomohon kota wisata dunia.')
+            ->assertSee('Struktur Pemerintahan')
+            ->assertSee('Boy S. Undap, SE')
+            ->assertSee('Lingkungan VII');
     }
 
-    public function test_government_page_uses_active_officials_and_available_demographics(): void
+    public function test_about_page_shows_statistics_empty_state(): void
     {
-        Official::create([
-            'name' => 'Nama Perangkat',
-            'position' => 'Sekretaris',
-            'description' => null,
-            'sort_order' => 1,
-            'is_active' => true,
-        ]);
-        Official::create([
-            'name' => 'Nama Pejabat (Contoh)',
-            'position' => 'Lurah',
-            'description' => '[DATA CONTOH] Data contoh.',
-            'sort_order' => 0,
-            'is_head' => true,
-            'is_active' => true,
-        ]);
-        Official::create([
-            'name' => 'Perangkat Nonaktif',
-            'position' => 'Staf',
-            'is_active' => false,
-        ]);
-        Demographic::create([
-            'year' => 2025,
-            'total_population' => 1200,
-            'male_population' => 600,
-            'female_population' => 600,
-            'total_families' => null,
-            'total_lingkungan' => null,
-            'notes' => null,
-        ]);
-
-        $this->get(route('pemerintahan'))
+        $this->get(route('tentang'))
             ->assertOk()
-            ->assertSee('Nama Perangkat')
-            ->assertDontSee('Nama Pejabat (Contoh)')
-            ->assertDontSee('Perangkat Nonaktif')
-            ->assertSee('1.200')
-            ->assertSee('Data tahun 2025.');
+            ->assertSee('DEMOGRAFI')
+            ->assertSee('Data Kependudukan')
+            ->assertSee('Data kependudukan terverifikasi belum tersedia.')
+            ->assertSee('href="#statistik"', false);
     }
 
-    public function test_government_page_handles_no_verified_data(): void
+    public function test_about_page_shows_demographics_when_available(): void
     {
-        Official::create([
-            'name' => 'Nama Contoh',
-            'position' => 'Jabatan Contoh',
-            'description' => '[DATA CONTOH] Isi contoh.',
-            'is_active' => true,
-        ]);
         Demographic::create([
             'year' => 2026,
-            'total_population' => null,
-            'male_population' => null,
-            'female_population' => null,
-            'total_families' => null,
-            'total_lingkungan' => null,
-            'notes' => '[DATA CONTOH] Belum tersedia.',
+            'total_population' => 2456,
+            'male_population' => 1228,
+            'female_population' => 1228,
+            'total_families' => 801,
+            'total_lingkungan' => 7,
+            'notes' => 'Semester 1 per 30 Juni 2026.',
         ]);
 
-        $this->get(route('pemerintahan'))
+        $this->get(route('tentang'))
             ->assertOk()
-            ->assertSee('Data perangkat kelurahan belum tersedia')
-            ->assertSee('Data kependudukan terverifikasi belum tersedia');
+            ->assertSee('DEMOGRAFI')
+            ->assertSee('Data Kependudukan')
+            ->assertSee('2.456')
+            ->assertSee('1.228')
+            ->assertSee('801')
+            ->assertSee('7')
+            ->assertSee('Semester 1 per 30 Juni 2026.')
+            ->assertDontSee('Data kependudukan terverifikasi belum tersedia.');
     }
 
-    public function test_gallery_page_has_a_clear_empty_state_when_no_images_exist(): void
+    public function test_kkt_members_page_shows_members_and_pendamping_from_central_data(): void
     {
-        $this->get(route('galeri'))
+        $this->get(route('anggota-kkt'))
             ->assertOk()
-            ->assertSee('Dokumentasi kegiatan akan ditampilkan di sini.')
-            ->assertSee('Anggota Posko KKT')
-            ->assertSee('Sepri Tandira_Pak')
-            ->assertSee('Foto anggota belum tersedia');
+            ->assertSee('Anggota KKT')
+            ->assertDontSee('Anggota Posko KKT')
+            ->assertDontSee('Tim yang menjalankan kegiatan KKT di Kinilow.')
+            ->assertSee('Ezra M. Tambaritji')
+            ->assertSee('Divisi PDD')
+            ->assertSee('Prof. Dr. Ir. Rignolda Djamaluddin, M. Sc')
+            ->assertSee('Foto Ezra M. Tambaritji')
+            ->assertDontSee('Data anggota KKT akan segera ditambahkan.');
     }
-
-    public function test_facilities_page_shows_active_real_records_and_handles_empty_state(): void
+    public function test_legacy_pages_redirect_permanently(): void
     {
-        Facility::create([
-            'name' => 'Puskesmas Wilayah',
-            'category' => 'kesehatan',
-            'address' => 'Jalan Merdeka',
-            'description' => 'Layanan kesehatan.',
-            'map_url' => 'https://maps.example.test/location',
-            'is_active' => true,
-        ]);
-        Facility::create([
-            'name' => 'Fasilitas Contoh',
-            'category' => 'lainnya',
-            'address' => '[DATA CONTOH] Alamat.',
-            'is_active' => true,
-        ]);
-        Facility::create([
-            'name' => 'Fasilitas Nonaktif',
-            'category' => 'lainnya',
-            'is_active' => false,
-        ]);
+        $this->get('/statistik')->assertStatus(301)->assertRedirect('/tentang#statistik');
+        $this->get('/profil')->assertStatus(301)->assertRedirect('/tentang');
+        $this->get('/pemerintahan')->assertStatus(301)->assertRedirect('/tentang#struktur-pemerintahan');
+        $this->get('/potensi')->assertStatus(301)->assertRedirect('/');
+        $this->get('/potensi/contoh-lama')->assertStatus(301)->assertRedirect('/');
+    }
+    public function test_gallery_page_shows_program_cards_and_keyboard_lightbox(): void
+    {
+        $response = $this->get(route('galeri'));
+        $response->assertOk()
+            ->assertSee('Dokumentasi Kelurahan Kinilow')
+            ->assertSee('Goes to School Area Privasiku')
+            ->assertSee('Pengembangan Website Profil dan Layanan Informasi Kelurahan Kinilow')
+            ->assertSee('1 foto')
+            ->assertDontSee('Foto kegiatan akan segera ditambahkan.')
+            ->assertSee('Tutup foto', false)
+            ->assertSee('data-proker-index="0"', false)
+            ->assertDontSee('Ezra M. Tambaritji');
+
+        $this->assertSame(8, substr_count($response->getContent(), 'data-proker-index='));
+    }
+    public function test_facilities_page_shows_seeded_facilities_with_photos_and_maps(): void
+    {
+        $this->seed(\Database\Seeders\FacilitySeeder::class);
 
         $this->get(route('fasilitas'))
             ->assertOk()
-            ->assertSee('Puskesmas Wilayah')
-            ->assertSee('Jalan Merdeka')
-            ->assertSee('https://maps.example.test/location')
-            ->assertDontSee('Fasilitas Contoh')
-            ->assertDontSee('Fasilitas Nonaktif');
+            ->assertSee('Highland Resort &amp; Nature Tours', false)
+            ->assertSee('Mountain View Resort &amp; Spa', false)
+            ->assertSee('Where Travelers Meet Travelers')
+            ->assertSee("Onong's Homestay Tomohon")
+            ->assertSee('https://maps.app.goo.gl/1stbBgrNdfc4558F8')
+            ->assertSee('Lihat di Google Maps')
+            ->assertSee('data-facility-filter="penginapan"', false)
+            ->assertSee('alt="Foto Air Terjun Kanderawatu"', false)
+            ->assertDontSee('TODO: kategori belum ditentukan.')
+            ->assertDontSee('Alamat belum diisi')
+            ->assertDontSee('Highland Resort &amp; Nature Tours Contoh', false);
+
+        $this->assertSame(10, Facility::active()->count());
+    }
+
+    public function test_facilities_page_uses_central_data_when_database_is_empty(): void
+    {
+        $this->get(route('fasilitas'))
+            ->assertOk()
+            ->assertSee('Highland Resort &amp; Nature Tours', false)
+            ->assertSee('Foto Air Terjun Kanderawatu', false)
+            ->assertSee('https://maps.app.goo.gl/1stbBgrNdfc4558F8')
+            ->assertDontSee('Informasi fasilitas belum tersedia.');
     }
 
     public function test_contact_page_displays_only_confirmed_profile_fields(): void
@@ -184,7 +151,7 @@ class PublicContentPagesTest extends TestCase
     {
         $this->get(route('kontak'))
             ->assertOk()
-            ->assertSee('Informasi telepon, email')
-            ->assertSee('Alamat dan tautan lokasi belum tersedia.');
+            ->assertSee('Informasi Kontak')
+            ->assertSee('Informasi Kontak');
     }
 }

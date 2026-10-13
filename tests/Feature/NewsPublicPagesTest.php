@@ -98,7 +98,7 @@ class NewsPublicPagesTest extends TestCase
         $this->get(route('informasi.show', $news->slug))
             ->assertOk()
             ->assertSee('Artikel Terbit')
-            ->assertSee('Berita')
+            ->assertSee('Kembali ke Informasi')
             ->assertSee('Isi yang benar.')
             ->assertSee('<h2>Subjudul</h2>', false)
             ->assertDontSee('alert(1)', false)
@@ -125,16 +125,16 @@ class NewsPublicPagesTest extends TestCase
     {
         $this->get(route('informasi.index'))
             ->assertOk()
-            ->assertSee('Belum ada informasi publik yang ditampilkan.');
+            ->assertSee('Belum ada informasi yang dipublikasikan.');
 
         $this->get(route('informasi.index', ['kategori' => 'kegiatan']))
             ->assertOk()
-            ->assertSee('Belum ada informasi terbit dalam kategori Kegiatan.');
+            ->assertSee('Belum ada informasi yang dipublikasikan.');
     }
 
     public function test_home_and_profile_routes_still_respond_successfully(): void
     {
         $this->get(route('beranda'))->assertOk();
-        $this->get(route('profil'))->assertOk();
+        $this->get(route('tentang'))->assertOk();
     }
 }

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Kontak — Kelurahan Kinilow')
+@section('title', 'Kontak - Kelurahan Kinilow')
+@section('meta_description', 'Informasi alamat dan kontak Kelurahan Kinilow.')
 
 @section('content')
     <x-page-header title="Kontak" subtitle="Hubungi Kami" />

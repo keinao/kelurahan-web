@@ -1,17 +1,16 @@
 @php
     $navLinks = [
         ['route' => 'beranda', 'label' => 'Beranda'],
-        ['route' => 'profil', 'label' => 'Profil'],
-        ['route' => 'pemerintahan', 'label' => 'Pemerintahan'],
-        ['route' => 'informasi.index', 'label' => 'Informasi'],
-        ['route' => 'potensi.index', 'label' => 'Potensi'],
+        ['route' => 'tentang', 'label' => 'Tentang Kinilow'],
+        ['route' => 'informasi.index', 'label' => 'Layanan Publik'],
         ['route' => 'galeri', 'label' => 'Galeri'],
         ['route' => 'fasilitas', 'label' => 'Fasilitas'],
+        ['route' => 'anggota-kkt', 'label' => 'Anggota KKT'],
         ['route' => 'kontak', 'label' => 'Kontak'],
     ];
 @endphp
 <header>
-    <nav class="kn-site-nav navbar navbar-expand-lg sticky-top" aria-label="Navigasi utama">
+    <nav class="kn-site-nav navbar navbar-expand-xl sticky-top" aria-label="Navigasi utama">
         <div class="container d-flex align-items-center">
             <a class="kn-wordmark" href="{{ route('beranda') }}">
                 @if (file_exists(public_path('images/patterns/logo-tomohon.png')))
@@ -29,9 +28,14 @@
             <div class="collapse navbar-collapse kn-batik-menu" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     @foreach ($navLinks as $link)
+                        @php
+                            $isActive = $link['route'] === 'informasi.index'
+                                ? request()->routeIs('informasi.*')
+                                : request()->routeIs($link['route']);
+                        @endphp
                         <li class="nav-item">
-                            <a class="kn-nav-link nav-link {{ request()->routeIs($link['route'] . '*') ? 'active' : '' }}"
-                               @if(request()->routeIs($link['route'] . '*')) aria-current="page" @endif
+                            <a class="kn-nav-link nav-link {{ $isActive ? 'active' : '' }}"
+                               @if($isActive) aria-current="page" @endif
                                href="{{ route($link['route']) }}">
                                 {{ $link['label'] }}
                             </a>

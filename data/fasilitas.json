@@ -1,0 +1,194 @@
+[
+  {
+    "nama": "Highland Resort & Nature Tours",
+    "slug": "highland-resort-nature-tours",
+    "maps_url": "https://maps.app.goo.gl/1stbBgrNdfc4558F8",
+    "foto": [
+      {
+        "file": "images/facilities/kinilow/highland-resort-nature-tours.jpg",
+        "thumb": "images/facilities/kinilow/highland-resort-nature-tours-thumb.jpg",
+        "alt": "Foto Highland Resort & Nature Tours",
+        "width": 600,
+        "height": 395,
+        "full_width": 1140,
+        "full_height": 751
+      }
+    ],
+    "kategori": "penginapan",
+    "deskripsi": null,
+    "subtitle": null
+  },
+  {
+    "nama": "Rimba Eco Resort",
+    "slug": "rimba-eco-resort",
+    "maps_url": "https://maps.app.goo.gl/QMJdhW4iem3bzMYy5",
+    "foto": [
+      {
+        "file": "images/facilities/kinilow/rimba-eco-resort.jpg",
+        "thumb": "images/facilities/kinilow/rimba-eco-resort-thumb.jpg",
+        "alt": "Foto Rimba Eco Resort",
+        "width": 600,
+        "height": 705,
+        "full_width": 677,
+        "full_height": 795
+      }
+    ],
+    "kategori": "penginapan",
+    "deskripsi": null,
+    "subtitle": null
+  },
+  {
+    "nama": "Mansai Kitchen and Bar",
+    "slug": "mansai-kitchen-and-bar",
+    "maps_url": "https://maps.app.goo.gl/S8Dvhe4JgrTDShbz5",
+    "foto": [
+      {
+        "file": "images/facilities/kinilow/mansai-kitchen-and-bar.jpg",
+        "thumb": "images/facilities/kinilow/mansai-kitchen-and-bar-thumb.jpg",
+        "alt": "Foto Mansai Kitchen and Bar",
+        "width": 600,
+        "height": 707,
+        "full_width": 672,
+        "full_height": 792
+      }
+    ],
+    "kategori": "kuliner",
+    "deskripsi": null,
+    "subtitle": null
+  },
+  {
+    "nama": "Mountain View Resort & Spa",
+    "slug": "mountain-view-resort-spa",
+    "maps_url": "https://maps.app.goo.gl/5jDBbnsa4ruHKAag6",
+    "foto": [
+      {
+        "file": "images/facilities/kinilow/mountain-view-resort-spa.jpg",
+        "thumb": "images/facilities/kinilow/mountain-view-resort-spa-thumb.jpg",
+        "alt": "Foto Mountain View Resort & Spa",
+        "width": 600,
+        "height": 398,
+        "full_width": 1203,
+        "full_height": 797
+      }
+    ],
+    "kategori": "penginapan",
+    "deskripsi": null,
+    "subtitle": "Where Travelers Meet Travelers"
+  },
+  {
+    "nama": "Onong's Homestay Tomohon",
+    "slug": "onongs-homestay-tomohon",
+    "maps_url": "https://maps.app.goo.gl/korgfmxKSaHFUdE67",
+    "foto": [
+      {
+        "file": "images/facilities/kinilow/onongs-homestay-tomohon.jpg",
+        "thumb": "images/facilities/kinilow/onongs-homestay-tomohon-thumb.jpg",
+        "alt": "Foto Onong's Homestay Tomohon",
+        "width": 600,
+        "height": 399,
+        "full_width": 1357,
+        "full_height": 902
+      }
+    ],
+    "kategori": "penginapan",
+    "deskripsi": null,
+    "subtitle": null
+  },
+  {
+    "nama": "Air Terjun Kanderawatu",
+    "slug": "air-terjun-kanderawatu",
+    "maps_url": "https://maps.app.goo.gl/N3aYXfKgVhc9AcJTA",
+    "foto": [
+      {
+        "file": "images/facilities/kinilow/air-terjun-kanderawatu.jpg",
+        "thumb": "images/facilities/kinilow/air-terjun-kanderawatu-thumb.jpg",
+        "alt": "Foto Air Terjun Kanderawatu",
+        "width": 600,
+        "height": 900,
+        "full_width": 666,
+        "full_height": 1000
+      }
+    ],
+    "kategori": "wisata-alam",
+    "deskripsi": null,
+    "subtitle": null
+  },
+  {
+    "nama": "Gereja GMIM Kinilow Yerusalem",
+    "slug": "gereja-gmim-kinilow-yerusalem",
+    "maps_url": "https://maps.app.goo.gl/gpaza4TnAv8sWmFd6",
+    "foto": [
+      {
+        "file": "images/facilities/kinilow/gereja-gmim-kinilow-yerusalem.jpg",
+        "thumb": "images/facilities/kinilow/gereja-gmim-kinilow-yerusalem-thumb.jpg",
+        "alt": "Foto Gereja GMIM Kinilow Yerusalem",
+        "width": 480,
+        "height": 640,
+        "full_width": 480,
+        "full_height": 640
+      }
+    ],
+    "kategori": "ibadah",
+    "deskripsi": null,
+    "subtitle": null
+  },
+  {
+    "nama": "Masjid At-Taqwa Hidayatullah Kinilow",
+    "slug": "masjid-at-taqwa-hidayatullah-kinilow",
+    "maps_url": "https://maps.app.goo.gl/gWsVx5W7PXTunWGH9",
+    "foto": [
+      {
+        "file": "images/facilities/kinilow/masjid-at-taqwa-hidayatullah-kinilow.jpg",
+        "thumb": "images/facilities/kinilow/masjid-at-taqwa-hidayatullah-kinilow-thumb.jpg",
+        "alt": "Foto Masjid At-Taqwa Hidayatullah Kinilow",
+        "width": 600,
+        "height": 442,
+        "full_width": 1080,
+        "full_height": 795
+      }
+    ],
+    "kategori": "ibadah",
+    "deskripsi": null,
+    "subtitle": null
+  },
+  {
+    "nama": "Rest Area Tomohon",
+    "slug": "rest-area-tomohon",
+    "maps_url": "https://maps.app.goo.gl/HhSRmGcnpUBywAjT9",
+    "foto": [
+      {
+        "file": "images/facilities/kinilow/rest-area-tomohon.jpg",
+        "thumb": "images/facilities/kinilow/rest-area-tomohon-thumb.jpg",
+        "alt": "Foto Rest Area Tomohon",
+        "width": 600,
+        "height": 691,
+        "full_width": 670,
+        "full_height": 772
+      }
+    ],
+    "kategori": null,
+    "deskripsi": null,
+    "subtitle": null,
+    "todo": "TODO: kategori belum ditentukan."
+  },
+  {
+    "nama": "Indraloka",
+    "slug": "indraloka",
+    "maps_url": "https://maps.app.goo.gl/2nMgjFGR78MZX86z7",
+    "foto": [
+      {
+        "file": "images/facilities/kinilow/indraloka.jpg",
+        "thumb": "images/facilities/kinilow/indraloka-thumb.jpg",
+        "alt": "Foto Indraloka",
+        "width": 600,
+        "height": 783,
+        "full_width": 1080,
+        "full_height": 1408
+      }
+    ],
+    "kategori": null,
+    "deskripsi": null,
+    "subtitle": null,
+    "todo": "TODO: kategori belum ditentukan."
+  }
+]

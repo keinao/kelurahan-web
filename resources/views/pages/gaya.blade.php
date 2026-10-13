@@ -40,7 +40,7 @@
         <x-section-header eyebrow="Aksi" title="Tombol dan tautan." />
         <div class="kn-style-row d-flex flex-wrap align-items-center gap-3">
             <a class="btn btn-primary" href="{{ route('beranda') }}">Jelajahi</a>
-            <a class="btn btn-outline-primary" href="{{ route('profil') }}">Baca profil</a>
+            <a class="btn btn-outline-primary" href="{{ route('tentang') }}">Tentang Kinilow</a>
             <a class="kn-arrow-link" href="{{ route('informasi.index') }}">Lihat informasi</a>
         </div>
     </div></section>

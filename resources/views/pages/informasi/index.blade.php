@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Informasi — Kelurahan Kinilow')
+@section('title', 'Layanan Publik - Kelurahan Kinilow')
+@section('meta_description', 'Berita dan layanan publik Kelurahan Kinilow.')
 
 @section('content')
-    <x-page-header title="Informasi & Berita" subtitle="Berita Terbaru" />
+    <x-page-header title="Layanan Publik" subtitle="Berita dan Informasi" />
 
     <section class="kn-section kn-section--white" data-reveal>
         <div class="container">
@@ -35,7 +36,7 @@
                     </nav>
                 @endif
             @else
-                <x-empty-state message="Belum ada informasi yang dipublikasikan." icon="bi-newspaper" />
+                <x-empty-state message="Belum ada berita atau layanan yang dipublikasikan." icon="bi-newspaper" />
             @endif
         </div>
     </section>

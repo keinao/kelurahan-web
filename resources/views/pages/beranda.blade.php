@@ -13,10 +13,10 @@
     ], static fn (string $value): bool => $value !== ''));
 @endphp
 
-@section('title', 'Beranda' . ($displayVillageName !== '' ? ' — ' . $displayVillageName : ''))
+@section('title', 'Beranda - Kelurahan Kinilow')
+@section('meta_description', 'Website resmi Kelurahan Kinilow, Kecamatan Tomohon Utara, Kota Tomohon.')
 
 @section('content')
-    {{-- Hero --}}
     <section class='kn-home-hero kn-home-hero--kinilow' aria-labelledby='hero-heading'>
         <div class='container kn-home-hero__text-wrap'>
             <div class='row align-items-center'>
@@ -28,7 +28,7 @@
                         @endif
                         <h1 id='hero-heading' class='kn-home-hero__title'>{{ $displayVillageName !== '' ? 'Selamat Datang di ' . $displayVillageName : 'Selamat Datang' }}</h1>
                         <p class='kn-home-hero__lead'>{{ data_get($villageProfile ?? null, 'short_description') ?: 'Informasi dan layanan publik dalam satu portal.' }}</p>
-                        <a href='{{ route('profil') }}' class='kn-arrow-link mt-3'>Jelajahi Profil</a>
+                        <a href='{{ route('tentang') }}' class='kn-arrow-link mt-3'>Tentang Kinilow</a>
                     </div>
                 </div>
             </div>
@@ -40,18 +40,70 @@
             <path d='M0 47 C210 75 410 76 620 49 C830 22 1015 18 1190 40 C1290 53 1370 63 1440 50 V80 H0 Z' />
         </svg>
     </section>
-    {{-- Jelajahi Kelurahan --}}
+
+    <section class="kn-home-stats" aria-label="Sekilas Kelurahan Kinilow">
+        <div class="container">
+            <div class="kn-home-stats__grid" data-reveal>
+                <article class="kn-home-stat">
+                    <span class="kn-home-stat__icon"><i class="bi bi-map" aria-hidden="true"></i></span>
+                    <span class="kn-home-stat__value" data-countup="6" data-countup-decimals="2" data-countup-suffix=" km²">6,00 km²</span>
+                    <span class="kn-home-stat__label">Luas wilayah</span>
+                </article>
+                <article class="kn-home-stat">
+                    <span class="kn-home-stat__icon"><i class="bi bi-houses" aria-hidden="true"></i></span>
+                    <span class="kn-home-stat__value" data-countup="7" data-countup-suffix="">7</span>
+                    <span class="kn-home-stat__label">Lingkungan</span>
+                </article>
+                <article class="kn-home-stat">
+                    <span class="kn-home-stat__icon"><i class="bi bi-thermometer-snow" aria-hidden="true"></i></span>
+                    <span class="kn-home-stat__value" data-countup="700" data-countup-prefix="± " data-countup-suffix=" mdpl">± 700 mdpl</span>
+                    <span class="kn-home-stat__label">Ketinggian rata-rata</span>
+                </article>
+                <article class="kn-home-stat">
+                    <span class="kn-home-stat__icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="kn-home-stat__value" data-countup="2459" data-countup-suffix="">2.459</span>
+                    <span class="kn-home-stat__label">Jiwa penduduk (BPS)</span>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="gambaran-umum" class="kn-section kn-section--white kn-home-overview" data-reveal aria-labelledby="kinilow-overview-heading">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <x-section-header id="kinilow-overview-heading" title="Kenali lebih dekat Kelurahan Kinilow" eyebrow="Gambaran Umum" />
+                    <p class="kn-home-overview__copy">Kinilow berada di dataran tinggi antara Gunung Lokon dan Gunung Mahawu. Berdasarkan data BPS, Kinilow merupakan kelurahan terluas di Kecamatan Tomohon Utara (6,00 km²), didukung potensi wisata alam seperti Gunung Lokon dan Gunung Empung, Air Terjun Kanderawatu, dan Waruga; sarana akomodasi hotel; serta sentra kerajinan anyaman bambu dan UMKM yang bertumbuh.</p>
+                    <a href="{{ route('tentang') }}" class="kn-home-text-link">Baca Selengkapnya <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="kn-home-collage" role="group" aria-label="Alam dan kerajinan Kelurahan Kinilow">
+                        <figure class="kn-home-collage__waterfall">
+                            <img src="{{ asset('images/patterns/air-terjun.jpeg') }}" alt="Air Terjun Kanderawatu yang dikelilingi hutan hijau" loading="lazy" decoding="async">
+                            <figcaption>Air Terjun Kanderawatu</figcaption>
+                        </figure>
+                        <figure class="kn-home-collage__craft">
+                            <img src="{{ asset('images/patterns/anyaman.png') }}" alt="Kerajinan anyaman bambu Kinilow" loading="lazy" decoding="async">
+                            <figcaption>Anyaman bambu Kinilow</figcaption>
+                        </figure>
+                        <span class="kn-home-collage__seal" aria-hidden="true"><i class="bi bi-flower1"></i><span>Alam &amp;<br>budaya</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="kn-section kn-home-explore" data-reveal aria-labelledby="explore-heading">
         <div class="container">
             <x-section-header id="explore-heading" title="Jelajahi Kelurahan" eyebrow="Navigasi Cepat" />
             <div class="row g-3">
                 @php
                     $exploreLinks = [
-                        ['route' => 'profil', 'icon' => 'bi-book', 'label' => 'Profil', 'desc' => 'Sejarah & visi misi'],
-                        ['route' => 'pemerintahan', 'icon' => 'bi-people', 'label' => 'Pemerintahan', 'desc' => 'Aparatur kelurahan'],
-                        ['route' => 'informasi.index', 'icon' => 'bi-newspaper', 'label' => 'Informasi', 'desc' => 'Berita terbaru'],
-                        ['route' => 'potensi.index', 'icon' => 'bi-star', 'label' => 'Potensi', 'desc' => 'Potensi unggulan'],
-                        ['route' => 'fasilitas', 'icon' => 'bi-building', 'label' => 'Fasilitas', 'desc' => 'Sarana & prasarana'],
+                        ['route' => 'tentang', 'icon' => 'bi-book', 'label' => 'Tentang Kinilow', 'desc' => 'Gambaran umum & pemerintahan'],
+                        ['route' => 'informasi.index', 'icon' => 'bi-newspaper', 'label' => 'Layanan Publik', 'desc' => 'Berita dan layanan warga'],
+                        ['route' => 'galeri', 'icon' => 'bi-images', 'label' => 'Galeri', 'desc' => 'Dokumentasi Kinilow'],
+                        ['route' => 'fasilitas', 'icon' => 'bi-building', 'label' => 'Fasilitas', 'desc' => 'Sarana dan prasarana'],
+                        ['route' => 'anggota-kkt', 'icon' => 'bi-people', 'label' => 'Anggota KKT', 'desc' => 'Tim KKT Kinilow'],
                         ['route' => 'kontak', 'icon' => 'bi-telephone', 'label' => 'Kontak', 'desc' => 'Hubungi kami'],
                     ];
                 @endphp
@@ -71,12 +123,24 @@
         </div>
     </section>
 
-    {{-- Berita Terkini --}}
+    <section class="kn-home-mapalus" data-reveal aria-label="Nilai kebersamaan masyarakat Kinilow">
+        <div class="container">
+            <div class="kn-home-mapalus__inner">
+                <span class="kn-home-mapalus__mark" aria-hidden="true"><i class="bi bi-flower1"></i></span>
+                <div>
+                    <p class="kn-eyebrow">Semangat Mapalus</p>
+                    <blockquote>“Bekerja bersama, menjaga kampung, dan merawat harapan untuk Kinilow.”</blockquote>
+                </div>
+                <span class="kn-home-mapalus__caption">Kebersamaan adalah kekuatan warga.</span>
+            </div>
+        </div>
+    </section>
+
     @if($berita->count())
-        <section class="kn-section kn-section--white" data-reveal aria-labelledby="berita-heading">
+        <section class="kn-section kn-section--white kn-home-latest" data-reveal aria-labelledby="berita-heading">
             <div class="container">
-                <x-section-header id="berita-heading" title="Berita Terkini" eyebrow="Informasi">
-                    <a href="{{ route('informasi.index') }}" class="kn-arrow-link">Lihat semua</a>
+                <x-section-header id="berita-heading" title="Berita Terkini" eyebrow="Layanan Publik">
+                    <a href="{{ route('informasi.index') }}" class="kn-home-text-link">Lihat semua <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                 </x-section-header>
                 <div class="row g-4">
                     @foreach($berita as $item)
@@ -95,33 +159,6 @@
                                 <p class="flex-grow-1">{{ Str::limit(strip_tags($item->content), 100) }}</p>
                                 <a href="{{ route('informasi.show', $item->slug) }}" class="kn-arrow-link mt-auto">Selengkapnya</a>
                             </article>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-    @endif
-
-    <div class="kn-pattern-ribbon kn-pattern-ribbon--batik" aria-hidden="true"></div>
-
-    {{-- Potensi Unggulan --}}
-    @if($potensi->count())
-        <section class="kn-section kn-section--sand kn-home-potential" data-reveal aria-labelledby="potensi-heading">
-            <div class="container">
-                <x-section-header id="potensi-heading" title="Potensi Unggulan" eyebrow="Keunggulan Daerah" />
-                <div class="row g-4">
-                    @foreach($potensi as $item)
-                        <div class="col-md-6 col-lg-4">
-                            <div class="kn-home-potential-card h-100 d-flex flex-column text-center">
-                                <div class="mb-3">
-                                    <i class="bi bi-star-fill fs-1" style="color: var(--bs-primary)" aria-hidden="true"></i>
-                                </div>
-                                <h3>{{ $item->name }}</h3>
-                                @if($item->description)
-                                    <p class="flex-grow-1">{{ Str::limit(strip_tags($item->description), 100) }}</p>
-                                @endif
-                                <a href="{{ route('potensi.show', $item->slug) }}" class="kn-arrow-link justify-content-center mt-auto">Detail</a>
-                            </div>
                         </div>
                     @endforeach
                 </div>

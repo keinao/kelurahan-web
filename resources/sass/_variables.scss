@@ -24,3 +24,18 @@ $border-radius: .375rem;
 $border-radius-sm: .25rem;
 $border-radius-lg: .5rem;
 $box-shadow: 0 .25rem .75rem rgba($charcoal, .06);
+// Shared Kinilow design tokens, consumed by the homepage and upcoming page work.
+:root {
+    --kn-terracotta: #B5532F;
+    --kn-honey: #C9A24B;
+    --kn-moss: #8FA67A;
+    --kn-radius-sm: 12px;
+    --kn-radius-md: 20px;
+    --kn-radius-lg: 28px;
+    --kn-radius-pill: 999px;
+    --kn-shadow-card: 0 16px 42px rgba(40, 50, 38, .11), 0 3px 10px rgba(40, 50, 38, .045);
+    --kn-shadow-lift: 0 22px 48px rgba(40, 50, 38, .16), 0 5px 14px rgba(40, 50, 38, .07);
+    --kn-section-space: clamp(4.5rem, 8vw, 7rem);
+    --kn-border-warm: rgba(97, 83, 57, .15);
+    --kn-weave-pattern: url('/images/patterns/batik-kinilow.webp');
+}

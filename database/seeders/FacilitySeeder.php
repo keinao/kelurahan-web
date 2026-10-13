@@ -4,34 +4,29 @@ namespace Database\Seeders;
 
 use App\Models\Facility;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 class FacilitySeeder extends Seeder
 {
     public function run(): void
     {
-        if (Facility::query()->exists()) {
-            return;
-        }
+        $facilities = json_decode(
+            File::get(base_path('data/fasilitas.json')),
+            true,
+            flags: JSON_THROW_ON_ERROR,
+        );
 
-        $facilities = [
-            ['Kantor Kelurahan Contoh', 'kantor', true],
-            ['Sekolah Contoh', 'sekolah', true],
-            ['Fasilitas Kesehatan Contoh', 'kesehatan', true],
-            ['Posyandu Contoh', 'posyandu', true],
-            ['Tempat Ibadah Contoh', 'ibadah', true],
-            ['Lapangan Contoh', 'lapangan', true],
-            ['Fasilitas Contoh Nonaktif', 'lainnya', false],
-        ];
-
-        foreach ($facilities as [$name, $category, $active]) {
-            Facility::create([
-                'name' => $name,
-                'category' => $category,
-                'address' => '[DATA CONTOH] Alamat belum diisi.',
-                'description' => '[DATA CONTOH] Deskripsi fasilitas belum diisi.',
-                'map_url' => null,
-                'is_active' => $active,
-            ]);
+        foreach ($facilities as $data) {
+            $facility = Facility::query()->firstOrNew(['name' => $data['nama']]);
+            $facility->slug ??= $data['slug'];
+            $facility->category ??= $data['kategori'];
+            $facility->map_url ??= $data['maps_url'];
+            $facility->address ??= null;
+            $facility->description ??= $data['deskripsi'];
+            $facility->photos ??= $data['foto'];
+            $facility->subtitle ??= $data['subtitle'];
+            $facility->is_active ??= true;
+            $facility->save();
         }
     }
 }

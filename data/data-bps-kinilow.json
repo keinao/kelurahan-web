@@ -1,0 +1,95 @@
+{
+  "sumber": {
+    "judul_publikasi": "Kecamatan Tomohon Utara Dalam Angka 2026",
+    "judul_bahasa_inggris": "Tomohon Utara District in Figures 2026",
+    "penerbit": "Badan Pusat Statistik Kota Tomohon (BPS-Statistics Tomohon Municipality)",
+    "katalog": "1102001.7173030",
+    "nomor_publikasi": "71730.26007",
+    "volume": "13, 2026",
+    "tanggal_rilis": "September 2026",
+    "situs": "https://tomohonkota.bps.go.id"
+  },
+  "wilayah": {
+    "kelurahan": "Kinilow",
+    "kecamatan": "Tomohon Utara",
+    "kota": "Tomohon",
+    "provinsi": "Sulawesi Utara"
+  },
+  "geografi": {
+    "luas_wilayah_km2": 6.00,
+    "persentase_terhadap_kecamatan": 13.16,
+    "peringkat_luas": "Kelurahan terluas di Kecamatan Tomohon Utara (6,00 km² dari total 45,60 km²)",
+    "jarak_ke_ibukota_kecamatan_km": 3.00,
+    "jarak_ke_ibukota_kota_km": 3.00,
+    "ketinggian_rata_rata": "+ 700 mdpl (meter di atas permukaan laut)",
+    "koordinat_kecamatan": "1° - 27° Lintang Utara dan 114° - 124° Bujur Timur",
+    "batas_wilayah_kecamatan": {
+      "utara": "Kecamatan Pineleng, Kabupaten Minahasa",
+      "selatan": "Kecamatan Tomohon Tengah",
+      "barat": "Kecamatan Tomohon Barat",
+      "timur": "Kecamatan Tomohon Timur"
+    }
+  },
+  "pemerintahan": {
+    "jumlah_lingkungan": 7,
+    "pegawai_negeri_sipil": {
+      "laki_laki": 19,
+      "perempuan": 40,
+      "total": 59
+    }
+  },
+  "kependudukan": {
+    "tahun_data": 2025,
+    "sumber_data": "Dinas Kependudukan dan Pencatatan Sipil Kota Tomohon",
+    "jumlah_penduduk": {
+      "laki_laki": 1235,
+      "perempuan": 1224,
+      "total": 2459
+    },
+    "distribusi_persentase": 8.24,
+    "kepadatan_penduduk_per_km2": 409.83,
+    "rasio_jenis_kelamin": 100.90
+  },
+  "infrastruktur_dan_sosial": {
+    "penerangan_jalan_utama": "Listrik Pemerintah (PLN)",
+    "bahan_bakar_memasak": "Elpiji 3 kg (LPG 3 kg)",
+    "transportasi": {
+      "prasarana": "Darat",
+      "kondisi_jalan": "Seluruhnya telah diaspal",
+      "angkutan_umum": "Tersedia dengan trayek tetap"
+    },
+    "komunikasi": {
+      "sinyal_seluler": "Sinyal telepon seluler kuat di seluruh wilayah kelurahan"
+    },
+    "mitigasi_bencana": {
+      "rambu_dan_jalur_evakuasi": "Tersedia fasilitas rambu dan jalur evakuasi bencana"
+    },
+    "fasilitas_perekonomian": {
+      "minimarket_supermarket": "Tersedia mini market/swalayan",
+      "restoran_rumah_makan": "Terdapat restoran/rumah makan",
+      "sarana_akomodasi": "Terdapat hotel di wilayah kelurahan"
+    }
+  },
+  "data_pembanding_kelurahan_tetangga": {
+    "kinilow_satu": {
+      "luas_wilayah_km2": 4.50,
+      "persentase_luas": 9.87,
+      "jarak_ke_kecamatan_km": 3.00,
+      "jarak_ke_kota_km": 3.00,
+      "jumlah_lingkungan": 11,
+      "pns": {
+        "laki_laki": 34,
+        "perempuan": 54,
+        "total": 88
+      },
+      "penduduk": {
+        "laki_laki": 1512,
+        "perempuan": 1462,
+        "total": 2974
+      },
+      "distribusi_persentase": 9.97,
+      "kepadatan_penduduk_per_km2": 660.89,
+      "rasio_jenis_kelamin": 103.42
+    }
+  }
+}

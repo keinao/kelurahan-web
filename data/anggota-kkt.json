@@ -1,0 +1,56 @@
+{
+  "pimpinan_pembimbing": [
+    {
+      "jabatan": "Koordinator P3KKNT",
+      "nama": "Prof. Dr. Ir. Rignolda Djamaluddin, M. Sc"
+    },
+    {
+      "jabatan": "Dosen Pengawas",
+      "nama": "Prof. Dr. Ir. Laurentius J.M. Rumokoy, M.Sc., DESS, IPU, ASEAN Eng."
+    },
+    {
+      "jabatan": "Dosen Pembimbing",
+      "nama": "Dr. Wahida Ma'ruf, Spt, Msi"
+    }
+  ],
+  "kelompok": [
+    {
+      "id": "pengurus-inti",
+      "nama": "Pengurus Inti",
+      "anggota": [
+        { "nama": "Ezra M. Tambaritji", "peran": "Koordinator Posko", "foto": "images/gallery/anggota/Ezra.JPG" },
+        { "nama": "Abigael Senduk", "peran": "Sekretaris", "foto": "images/gallery/anggota/Abigael.JPG" },
+        { "nama": "Vancel Rengkung", "peran": "Bendahara", "foto": "images/gallery/anggota/Vancel.JPG" }
+      ]
+    },
+    {
+      "id": "divisi-pdd",
+      "nama": "Divisi PDD",
+      "anggota": [
+        { "nama": "Claudia Makapuas", "peran": "Koordinator", "foto": "images/gallery/anggota/Claudia.jpg" },
+        { "nama": "Dian Faitji", "peran": "Anggota", "foto": "images/gallery/anggota/Faitji.jpg" },
+        { "nama": "Natalia Pandey", "peran": "Anggota", "foto": "images/gallery/anggota/Natalia.jpg" },
+        { "nama": "Tiara Laia", "peran": "Anggota", "foto": "images/gallery/anggota/Tiara.jpg" }
+      ]
+    },
+    {
+      "id": "divisi-pdp",
+      "nama": "Divisi PDP",
+      "anggota": [
+        { "nama": "Intan Hingkua", "peran": "Koordinator", "foto": "images/gallery/anggota/Intan.JPG" },
+        { "nama": "Jeannette Liow", "peran": "Anggota", "foto": "images/gallery/anggota/Jeannette.JPG" },
+        { "nama": "Mikha Tiwa", "peran": "Anggota", "foto": "images/gallery/anggota/Mikha.JPG" },
+        { "nama": "Sepri Tandira'pak", "peran": "Anggota", "foto": "images/gallery/anggota/Sepri.JPG" }
+      ]
+    },
+    {
+      "id": "divisi-humas",
+      "nama": "Divisi Humas",
+      "anggota": [
+        { "nama": "Cantika Anggreine Arina", "peran": "Koordinator", "foto": "images/gallery/anggota/Cantika.JPG" },
+        { "nama": "Yohana Pabangnga", "peran": "Anggota", "foto": "images/gallery/anggota/Yohana.JPG" },
+        { "nama": "Narwasti Sondok", "peran": "Anggota", "foto": "images/gallery/anggota/Narwasti.JPG" }
+      ]
+    }
+  ]
+}

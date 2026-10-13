@@ -69,7 +69,8 @@ class NewsController extends Controller
             ->allowRelativeLinks();
 
         $isiAman = (new HtmlSanitizer($config))->sanitize($berita->content);
+        $metaDescription = Str::limit(strip_tags($isiAman), 160);
 
-        return view('pages.informasi.show', compact('berita', 'isiAman'));
+        return view('pages.informasi.show', compact('berita', 'isiAman', 'metaDescription'));
     }
 }
