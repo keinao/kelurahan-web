@@ -179,9 +179,11 @@ class PageController extends Controller
             'regency' => $availableText($profile?->regency),
             'province' => $availableText($profile?->province),
             'phone' => null,
-            'whatsapp' => '+62 812-4138-5188',
+            'whatsapp' => '+62 896-0394-0811',
+            'contact_person' => 'Alfian M. L. Mantiaha, S.Sos',
+            'contact_position' => 'Kasie Kesejahteraan Rakyat',
             'email' => null,
-            'office_hours' => $availableText($profile?->office_hours),
+            'office_hours' => '08.00 - 16.30 WITA',
             'map_url' => $mapUrl,
         ];
 

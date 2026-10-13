@@ -22,15 +22,20 @@
                             @if($kontak['whatsapp'])
                                 <li class="kn-contact-info-item">
                                     <span class="kn-contact-info-item__icon kn-contact-info-item__icon--whatsapp" aria-hidden="true"><i class="bi bi-whatsapp"></i></span>
-                                    <a href="https://wa.me/{{ preg_replace('/\D/', '', $kontak['whatsapp']) }}" class="kn-contact-info-item__link" target="_blank" rel="noopener noreferrer">
-                                        WhatsApp {{ $kontak['whatsapp'] }} <i class="bi bi-arrow-up-right kn-contact-info-item__arrow" aria-hidden="true"></i>
-                                    </a>
+                                    <span class="kn-contact-info-item__text">
+                                        <a href="https://wa.me/{{ preg_replace('/\D/', '', $kontak['whatsapp']) }}" class="kn-contact-info-item__link" target="_blank" rel="noopener noreferrer">
+                                            WhatsApp {{ $kontak['whatsapp'] }} <i class="bi bi-arrow-up-right kn-contact-info-item__arrow" aria-hidden="true"></i>
+                                        </a>
+                                        @if($kontak['contact_person'])
+                                            <span class="kn-contact-info-item__contact-person">{{ $kontak['contact_position'] }}<br>{{ $kontak['contact_person'] }}</span>
+                                        @endif
+                                    </span>
                                 </li>
                             @endif
                             @if($kontak['office_hours'])
                                 <li class="kn-contact-info-item">
                                     <span class="kn-contact-info-item__icon" aria-hidden="true"><i class="bi bi-clock"></i></span>
-                                    <span class="kn-contact-info-item__text">{{ $kontak['office_hours'] }}</span>
+                                    <span class="kn-contact-info-item__text">Jam Operasional: {{ $kontak['office_hours'] }}</span>
                                 </li>
                             @endif
                         </ul>
