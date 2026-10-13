@@ -623,10 +623,10 @@ $kinilow-sun: #F2E7C8;
     }
     .kn-home-hero__backdrop {
         height: auto;
-        aspect-ratio: 4 / 3;
+        aspect-ratio: 16 / 9;
         object-fit: cover;
         object-position: 72% center;
-        border-radius: 8px;
+        border-radius: var(--kn-radius-md);
     }
 }
 
@@ -1162,4 +1162,196 @@ $kinilow-sun: #F2E7C8;
 }
 @media (prefers-reduced-motion: reduce) {
     .kn-home-collage img, .kn-home-link-card, .kn-home-link-card__icon, .kn-home-link-card__arrow { transition: none; }
+}
+
+// Beranda: pertahankan foto dan lengkung yang ada, bentangkan hero setinggi viewport.
+.kn-home-hero--kinilow { min-height: 100vh; min-height: 100svh; }
+.kn-home-hero--kinilow::after {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: block;
+    height: 8rem;
+    background: linear-gradient(180deg, rgba(20, 29, 22, .38), rgba(20, 29, 22, 0));
+    content: "";
+    pointer-events: none;
+}
+.kn-site-nav--home {
+    isolation: isolate;
+    position: fixed !important;
+    z-index: 1040;
+    top: 0 !important;
+    right: 0;
+    left: 0;
+    background: transparent;
+    border-color: transparent;
+    border-top-width: 0;
+    transition: background-color .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.kn-site-nav--home > .container { position: relative; z-index: 1; transform: translateY(-4px); }
+.kn-site-nav--home .kn-wordmark,
+.kn-site-nav--home .kn-nav-link { color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,.34); }
+.kn-site-nav--home .kn-wordmark:hover,
+.kn-site-nav--home .kn-nav-link:hover,
+.kn-site-nav--home .kn-nav-link.active { color: #fff; }
+.kn-site-nav--home .kn-nav-link.active::after { background: $natural-bamboo; }
+.kn-site-nav--home.is-scrolled { background: transparent; border-color: transparent; box-shadow: none; }
+.kn-site-nav--home::before {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    background: $deep-forest;
+    content: "";
+    opacity: 0;
+    pointer-events: none;
+    filter: drop-shadow(0 4px 5px rgba($charcoal,.13));
+    transition: opacity .35s ease;
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 96% 90%, 92% 91%, 88% 91%, 84% 89%, 80% 87%, 76% 86%, 72% 85%, 68% 85%, 64% 86%, 60% 87%, 56% 89%, 52% 90%, 48% 90%, 44% 91%, 40% 93%, 36% 94%, 32% 95%, 28% 95%, 24% 94%, 20% 93%, 16% 91%, 12% 90%, 8% 89%, 4% 89%, 0 88%);
+}
+.kn-site-nav--home.is-scrolled::before { opacity: 1; }
+.kn-site-nav--home.is-scrolled .kn-wordmark,
+.kn-site-nav--home.is-scrolled .kn-nav-link { text-shadow: none; }
+.kn-site-nav--home .kn-nav-toggle { border: 1px solid rgba(255,255,255,.6); }
+.kn-site-nav--home .navbar-toggler-icon { filter: brightness(0) invert(1); }
+
+// Empat kartu baru bergerak setelah pengguna mulai menggulir halaman.
+.kn-home-stats__grid { opacity: 0; transform: translateY(18px); transition: opacity .62s ease, transform .62s cubic-bezier(.2,.72,.25,1); pointer-events: none; }
+.kn-home-stats__grid.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.kn-home-stat[data-home-stat] { transition: opacity .62s ease, transform .62s cubic-bezier(.2,.72,.25,1); }
+.js .kn-home-stat[data-home-stat] { opacity: 0; transform: translateY(22px); }
+.js .kn-home-stat[data-home-stat].is-visible { opacity: 1; transform: translateY(0); }
+
+// Foto lama tetap dipakai; pembungkus memberi garis emas tipis dan caption berada di bawah.
+.kn-home-stats { margin-top: -75px; padding-top: 0; background: transparent; }
+.kn-home-collage { min-height: 555px; margin: 0; overflow: visible; }
+.kn-home-collage figure {
+    position: relative;
+    overflow: visible;
+    margin: 0;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+.kn-home-collage figure:hover img { transform: none; }
+.kn-home-collage__waterfall { width: 74%; height: auto; margin-left: auto !important; }
+.kn-home-photo-frame {
+    width: 100%;
+    height: 100%;
+    padding: 6px;
+    background: linear-gradient(135deg, #e6c987, #b88a3e 50%, #e6c987);
+    border-radius: 8px;
+    box-shadow: 0 14px 36px rgba(45,74,58,.18);
+}
+.kn-home-photo-frame--portrait { aspect-ratio: 4 / 5; }
+.kn-home-photo-frame--square { aspect-ratio: 1 / 1; }
+.kn-home-photo-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+}
+.kn-home-collage__waterfall figcaption {
+    position: static;
+    margin: .75rem 0 0;
+    padding: 0;
+    color: $deep-forest;
+    background: none;
+    border-radius: 0;
+    font-family: $headings-font-family;
+    font-size: .95rem;
+    font-style: italic;
+    font-weight: 500;
+    text-align: center;
+    backdrop-filter: none;
+}
+.kn-home-collage__craft { position: absolute !important; z-index: 2; bottom: 4.25rem; left: 0; width: 36%; height: auto; }
+.kn-home-collage__craft figcaption {
+    position: static;
+    margin: .4rem 0 0;
+    width: 8rem;
+    max-width: 100%;
+    padding: 0;
+    color: $deep-forest;
+    background: transparent;
+    border-radius: 0;
+    font-family: $headings-font-family;
+    font-size: .78rem;
+    font-style: italic;
+    font-weight: 650;
+    line-height: 1.3;
+    text-align: center;
+    backdrop-filter: none;
+    box-shadow: none;
+}
+
+@media (max-width: 991.98px) {
+    .kn-home-hero--kinilow { display: flex; min-height: 100vh; min-height: 100svh; align-items: center; padding: 6.5rem 0 5rem; }
+    .kn-home-hero--kinilow::before { display: block; }
+    .kn-home-hero__wave { display: block; }
+    .kn-home-hero--kinilow .kn-home-hero__media-wrap {
+        position: absolute;
+        z-index: -2;
+        inset: 0;
+        width: 100%;
+        max-width: none;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .kn-home-hero__backdrop { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: center 56%; border-radius: 0; }
+    .kn-home-collage { min-height: 0; margin: 0 auto; }
+}
+@media (max-width: 1199.98px) {
+    .kn-site-nav--home .navbar-collapse.kn-batik-menu { background-color: $deep-forest; }
+    .kn-site-nav--home .navbar-collapse.kn-batik-menu .kn-nav-link { color: $warm-ivory; text-shadow: none; }
+}
+@media (max-width: 575.98px) {
+    .kn-home-stats { margin-top: -66px; padding-top: 0; }
+    .kn-home-collage { width: 100%; min-height: 0; padding-bottom: 1rem; }
+    .kn-home-collage__waterfall { width: 72%; }
+    .kn-home-collage__craft { bottom: 4.25rem; width: 38%; }
+    .kn-home-collage__craft figcaption { width: 6.5rem; font-size: .75rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .kn-home-stats__grid { opacity: 1; transform: none; pointer-events: auto; transition: none; }
+    .kn-home-stat[data-home-stat] { transition: none; }
+    .js .kn-home-stat[data-home-stat] { opacity: 1; transform: none; }
+}
+
+// Mapalus memakai hijau footer dengan aksen emas dan lambang yang bergerak lembut.
+.kn-home-mapalus {
+    color: #fff;
+    background: $deep-forest;
+}
+.kn-home-mapalus .kn-eyebrow { color: #E5C879; }
+.kn-home-mapalus__caption { color: rgba(255,255,255,.72); }
+.kn-home-mapalus__mark {
+    color: #F1D18A;
+    background: rgba(255,255,255,.1);
+    border-color: rgba(255,255,255,.18);
+}
+.kn-home-mapalus::after {
+    border-color: rgba(255,255,255,.12);
+    box-shadow: 0 0 0 2rem rgba(255,255,255,.025), 0 0 0 4rem rgba(255,255,255,.02);
+}
+.kn-home-mapalus__mark { transform-origin: center; }
+.kn-home-mapalus__mark i {
+    display: inline-block;
+    transform-origin: center;
+    animation: kn-mapalus-flower-rotation 8s linear infinite, kn-mapalus-flower-glow 2.4s ease-in-out infinite;
+}
+@keyframes kn-mapalus-flower-rotation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes kn-mapalus-flower-glow {
+    0%, 100% { filter: brightness(1) drop-shadow(0 0 0 rgba(241,209,138,0)); }
+    50% { filter: brightness(1.3) drop-shadow(0 0 3px rgba(255,245,198,.8)) drop-shadow(0 0 9px rgba(241,209,138,.78)); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .kn-home-mapalus__mark i { animation: none; }
 }

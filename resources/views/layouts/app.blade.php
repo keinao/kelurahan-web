@@ -23,7 +23,9 @@
         @yield('content')
     </main>
 
-    <div class="kn-pattern-ribbon kn-pattern-ribbon--batik" aria-hidden="true"></div>
+    @unless(request()->routeIs('beranda'))
+        <div class="kn-pattern-ribbon kn-pattern-ribbon--batik" aria-hidden="true"></div>
+    @endunless
 
     @include('partials.footer')
 </body>

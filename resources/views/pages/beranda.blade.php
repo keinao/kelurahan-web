@@ -24,7 +24,7 @@
                     <div class='kn-home-hero__content'>
                         <span class='kn-home-hero__flourish' aria-hidden='true'></span>
                         @if(count($villageLocation))
-                            <p class='kn-eyebrow'>{{ implode(' · ', $villageLocation) }}</p>
+                            <p class='kn-eyebrow'>{{ implode(' ' . chr(183) . ' ', $villageLocation) }}</p>
                         @endif
                         <h1 id='hero-heading' class='kn-home-hero__title'>{{ $displayVillageName !== '' ? 'Selamat Datang di ' . $displayVillageName : 'Selamat Datang' }}</h1>
                         <p class='kn-home-hero__lead'>{{ data_get($villageProfile ?? null, 'short_description') ?: 'Informasi dan layanan publik dalam satu portal.' }}</p>
@@ -43,23 +43,23 @@
 
     <section class="kn-home-stats" aria-label="Sekilas Kelurahan Kinilow">
         <div class="container">
-            <div class="kn-home-stats__grid" data-reveal>
-                <article class="kn-home-stat">
+            <div class="kn-home-stats__grid">
+                <article class="kn-home-stat" data-home-stat>
                     <span class="kn-home-stat__icon"><i class="bi bi-map" aria-hidden="true"></i></span>
-                    <span class="kn-home-stat__value" data-countup="6" data-countup-decimals="2" data-countup-suffix=" km²">6,00 km²</span>
+                    <span class="kn-home-stat__value" data-countup="6" data-countup-decimals="2" data-countup-suffix=" km&#178;">6,00 km&sup2;</span>
                     <span class="kn-home-stat__label">Luas wilayah</span>
                 </article>
-                <article class="kn-home-stat">
+                <article class="kn-home-stat" data-home-stat>
                     <span class="kn-home-stat__icon"><i class="bi bi-houses" aria-hidden="true"></i></span>
                     <span class="kn-home-stat__value" data-countup="7" data-countup-suffix="">7</span>
                     <span class="kn-home-stat__label">Lingkungan</span>
                 </article>
-                <article class="kn-home-stat">
+                <article class="kn-home-stat" data-home-stat>
                     <span class="kn-home-stat__icon"><i class="bi bi-thermometer-snow" aria-hidden="true"></i></span>
-                    <span class="kn-home-stat__value" data-countup="700" data-countup-prefix="± " data-countup-suffix=" mdpl">± 700 mdpl</span>
+                    <span class="kn-home-stat__value" data-countup="700" data-countup-prefix="&plusmn; " data-countup-suffix=" mdpl">&plusmn; 700 mdpl</span>
                     <span class="kn-home-stat__label">Ketinggian rata-rata</span>
                 </article>
-                <article class="kn-home-stat">
+                <article class="kn-home-stat" data-home-stat>
                     <span class="kn-home-stat__icon"><i class="bi bi-people" aria-hidden="true"></i></span>
                     <span class="kn-home-stat__value" data-countup="2459" data-countup-suffix="">2.459</span>
                     <span class="kn-home-stat__label">Jiwa penduduk (BPS)</span>
@@ -73,20 +73,23 @@
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
                     <x-section-header id="kinilow-overview-heading" title="Kenali lebih dekat Kelurahan Kinilow" eyebrow="Gambaran Umum" />
-                    <p class="kn-home-overview__copy">Kinilow berada di dataran tinggi antara Gunung Lokon dan Gunung Mahawu. Berdasarkan data BPS, Kinilow merupakan kelurahan terluas di Kecamatan Tomohon Utara (6,00 km²), didukung potensi wisata alam seperti Gunung Lokon dan Gunung Empung, Air Terjun Kanderawatu, dan Waruga; sarana akomodasi hotel; serta sentra kerajinan anyaman bambu dan UMKM yang bertumbuh.</p>
+                    <p class="kn-home-overview__copy">Kinilow berada di dataran tinggi antara Gunung Lokon dan Gunung Mahawu. Berdasarkan data BPS, Kinilow merupakan kelurahan terluas di Kecamatan Tomohon Utara (6,00 km&sup2;), didukung potensi wisata alam seperti Gunung Lokon dan Gunung Empung, Air Terjun Kanderawatu, dan Waruga; sarana akomodasi hotel; serta sentra kerajinan anyaman bambu dan UMKM yang bertumbuh.</p>
                     <a href="{{ route('tentang') }}" class="kn-home-text-link">Baca Selengkapnya <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                 </div>
                 <div class="col-lg-6">
                     <div class="kn-home-collage" role="group" aria-label="Alam dan kerajinan Kelurahan Kinilow">
                         <figure class="kn-home-collage__waterfall">
-                            <img src="{{ asset('images/patterns/air-terjun.jpeg') }}" alt="Air Terjun Kanderawatu yang dikelilingi hutan hijau" loading="lazy" decoding="async">
+                            <div class="kn-home-photo-frame kn-home-photo-frame--portrait">
+                                <img src="{{ asset('images/patterns/air-terjun.jpeg') }}" alt="Air Terjun Kanderawatu yang dikelilingi hutan hijau" loading="lazy" decoding="async">
+                            </div>
                             <figcaption>Air Terjun Kanderawatu</figcaption>
                         </figure>
                         <figure class="kn-home-collage__craft">
-                            <img src="{{ asset('images/patterns/anyaman.png') }}" alt="Kerajinan anyaman bambu Kinilow" loading="lazy" decoding="async">
+                            <div class="kn-home-photo-frame kn-home-photo-frame--square">
+                                <img src="{{ asset('images/patterns/anyaman.png') }}" alt="Anyaman bambu Kinilow" loading="lazy" decoding="async">
+                            </div>
                             <figcaption>Anyaman bambu Kinilow</figcaption>
                         </figure>
-                        <span class="kn-home-collage__seal" aria-hidden="true"><i class="bi bi-flower1"></i><span>Alam &amp;<br>budaya</span></span>
                     </div>
                 </div>
             </div>
@@ -129,7 +132,7 @@
                 <span class="kn-home-mapalus__mark" aria-hidden="true"><i class="bi bi-flower1"></i></span>
                 <div>
                     <p class="kn-eyebrow">Semangat Mapalus</p>
-                    <blockquote>“Bekerja bersama, menjaga kampung, dan merawat harapan untuk Kinilow.”</blockquote>
+                    <blockquote>&ldquo;Bekerja bersama, menjaga kampung, dan merawat harapan untuk Kinilow.&rdquo;</blockquote>
                 </div>
                 <span class="kn-home-mapalus__caption">Kebersamaan adalah kekuatan warga.</span>
             </div>
