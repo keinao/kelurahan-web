@@ -30,6 +30,10 @@ class VillageProfileSeeder extends Seeder
                 'regency' => 'Kota Tomohon',
                 'province' => 'Sulawesi Utara',
                 'postal_code' => '95439',
+                'phone' => null,
+                'whatsapp' => '+62 812-4138-5188',
+                'email' => null,
+                'map_url' => 'https://maps.app.goo.gl/rKm8sGoKiioYE9gb9',
                 'office_hours' => 'Senin – Jumat, 08.00 – 16.00 WITA',
             ]
         );

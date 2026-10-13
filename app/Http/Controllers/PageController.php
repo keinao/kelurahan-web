@@ -166,7 +166,7 @@ class PageController extends Controller
             ? trim($value)
             : null;
 
-        $mapUrl = $availableText($profile?->map_url);
+        $mapUrl = 'https://maps.app.goo.gl/rKm8sGoKiioYE9gb9';
         if ($mapUrl && (! filter_var($mapUrl, FILTER_VALIDATE_URL)
             || ! in_array(parse_url($mapUrl, PHP_URL_SCHEME), ['http', 'https'], true))) {
             $mapUrl = null;
@@ -178,9 +178,9 @@ class PageController extends Controller
             'district' => $availableText($profile?->district),
             'regency' => $availableText($profile?->regency),
             'province' => $availableText($profile?->province),
-            'phone' => $availableText($profile?->phone),
-            'whatsapp' => $availableText($profile?->whatsapp),
-            'email' => $availableText($profile?->email),
+            'phone' => null,
+            'whatsapp' => '+62 812-4138-5188',
+            'email' => null,
             'office_hours' => $availableText($profile?->office_hours),
             'map_url' => $mapUrl,
         ];

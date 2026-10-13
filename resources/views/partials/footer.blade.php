@@ -21,7 +21,7 @@
                 <h3 class="kn-footer-heading">Hubungi Kami</h3>
                 <ul class="kn-footer-list" style="opacity:.72">
                     <li><i class="bi bi-geo-alt me-2" aria-hidden="true"></i>Kinilow, Tomohon Utara</li>
-                    <li><i class="bi bi-envelope me-2" aria-hidden="true"></i>kelurahan@kinilow.id</li>
+                    <li><i class="bi bi-whatsapp me-2" aria-hidden="true"></i><a href="https://wa.me/6281241385188" target="_blank" rel="noopener noreferrer">+62 812-4138-5188</a></li><li><i class="bi bi-geo-alt me-2" aria-hidden="true"></i><a href="https://maps.app.goo.gl/rKm8sGoKiioYE9gb9" target="_blank" rel="noopener noreferrer">Lokasi Kantor</a></li>
                 </ul>
             </div>
         </div>
