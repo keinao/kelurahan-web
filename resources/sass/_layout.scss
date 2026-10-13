@@ -1,4 +1,4 @@
-.kn-site-nav {
+﻿.kn-site-nav {
     position: sticky;
     z-index: 1040;
     top: 0;
@@ -1171,6 +1171,166 @@ $kinilow-sun: #F2E7C8;
 .kn-contact-map-card > p:not(.kn-eyebrow) { max-width: 36ch; color: $muted-gray; line-height: 1.7; }
 .kn-contact-map-card__link { display: inline-flex; min-height: 48px; align-items: center; gap: .65rem; margin-top: .5rem; padding: .7rem 1rem; color: #fff; background: $deep-forest; border-radius: 999px; font-weight: 650; text-decoration: none; transition: transform .2s ease, background-color .2s ease; }
 .kn-contact-map-card__link:hover { color: #fff; background: #263C31; transform: translateY(-2px); }
+
+// Halaman kontak: kartu layanan dengan aksen anyaman dan kontur dataran tinggi.
+.kn-contact-section {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #F7F4ED 0%, #F1F3EC 54%, #E8EEE7 100%);
+
+    &::before {
+        position: absolute;
+        inset: 0;
+        background-image: var(--kn-weave-pattern);
+        background-position: center;
+        background-size: 150px auto;
+        content: "";
+        opacity: .035;
+        pointer-events: none;
+    }
+
+    > .container { position: relative; }
+}
+.kn-contact-info-card {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(1.5rem, 4vw, 2.75rem);
+    background: rgba(255, 255, 255, .93);
+    border: 1px solid var(--kn-border-warm);
+    border-radius: var(--kn-radius-lg);
+    box-shadow: var(--kn-shadow-card);
+
+    &::before {
+        position: absolute;
+        inset: 0 0 auto;
+        height: 5px;
+        background: linear-gradient(90deg, var(--kn-moss), var(--kn-honey), var(--kn-terracotta));
+        content: "";
+    }
+
+    .kn-section-header { margin-bottom: clamp(1.5rem, 3vw, 2.25rem); }
+    .kn-section-header h2 { font-size: clamp(2.3rem, 4vw, 3.15rem); line-height: 1; letter-spacing: -.025em; }
+    .kn-section-header .kn-eyebrow { margin-bottom: .7rem; }
+}
+.kn-contact-info-list { display: grid; gap: .85rem; }
+.kn-contact-info-item {
+    display: flex;
+    min-height: 4.5rem;
+    align-items: center;
+    gap: 1rem;
+    padding: .85rem 1rem;
+    color: $deep-forest;
+    background: #F8F7F2;
+    border: 1px solid rgba(97, 83, 57, .1);
+    border-radius: var(--kn-radius-md);
+}
+.kn-contact-info-item__icon {
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex: 0 0 auto;
+    place-items: center;
+    color: $deep-forest;
+    background: #E8EEE7;
+    border: 1px solid rgba(48, 72, 58, .09);
+    border-radius: 50%;
+    font-size: 1.05rem;
+}
+.kn-contact-info-item__icon--whatsapp { color: #42664A; background: #E9F1E7; }
+.kn-contact-info-item__text { color: #414A41; font-size: .96rem; line-height: 1.7; overflow-wrap: anywhere; }
+.kn-contact-info-item__link {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    gap: .55rem;
+    color: #30483A;
+    font-size: .96rem;
+    font-weight: 650;
+    line-height: 1.5;
+    text-decoration-color: rgba(48, 72, 58, .38);
+    text-underline-offset: .22em;
+    overflow-wrap: anywhere;
+
+    &:hover { color: #8E3D26; text-decoration-color: currentColor; }
+    &:focus-visible { border-radius: 4px; outline: 3px solid var(--kn-honey); outline-offset: 4px; }
+}
+.kn-contact-info-item__arrow { color: var(--kn-terracotta); transition: transform .2s ease; }
+.kn-contact-info-item__link:hover .kn-contact-info-item__arrow { transform: translate(2px, -2px); }
+.kn-contact-map-card {
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    background: linear-gradient(150deg, #E5ECE3 0%, #F4F1E8 100%);
+    border: 1px solid var(--kn-border-warm);
+    border-radius: var(--kn-radius-lg);
+    box-shadow: var(--kn-shadow-card);
+}
+.kn-contact-map-card__visual {
+    position: relative;
+    height: clamp(170px, 24vw, 240px);
+    overflow: hidden;
+    background: linear-gradient(145deg, #DCE7DA 0%, #EFF0E6 64%, #F2E7D5 100%);
+    border: 1px solid rgba(48, 72, 58, .12);
+    border-radius: var(--kn-radius-md);
+
+    &::after { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(48,72,58,.04)); content: ""; }
+    svg { position: absolute; inset: -2% -3%; width: 106%; height: 104%; fill: none; stroke: rgba(73, 105, 77, .38); stroke-width: 1.25; }
+}
+.kn-contact-map-card__pin {
+    position: absolute;
+    z-index: 1;
+    top: 48%;
+    left: 51%;
+    display: grid;
+    width: 3.5rem;
+    height: 3.5rem;
+    place-items: center;
+    color: #fff;
+    background: var(--kn-terracotta);
+    border: 5px solid rgba(255, 255, 255, .88);
+    border-radius: 50%;
+    box-shadow: 0 9px 24px rgba(51, 62, 47, .2);
+    font-size: 1.15rem;
+    transform: translate(-50%, -50%);
+}
+.kn-contact-map-card__visual-label { position: absolute; right: 1rem; bottom: .85rem; z-index: 1; color: #30483A; font-size: .68rem; font-weight: 750; letter-spacing: .2em; }
+.kn-contact-map-card__content { padding: clamp(1.4rem, 3vw, 2.15rem) .25rem .25rem; }
+.kn-contact-map-card .kn-eyebrow { margin-bottom: .45rem; color: #80553D; font-size: .72rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+.kn-contact-map-card h2 { margin-bottom: .55rem; color: $deep-forest; font-size: clamp(1.9rem, 3vw, 2.55rem); line-height: 1.05; }
+.kn-contact-map-card__content > p:not(.kn-eyebrow) { max-width: 38ch; margin-bottom: 1.15rem; color: #555E55; line-height: 1.7; }
+.kn-contact-map-card__link {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    gap: .65rem;
+    padding: .7rem 1.05rem;
+    color: #fff;
+    background: $deep-forest;
+    border: 1px solid $deep-forest;
+    border-radius: var(--kn-radius-pill);
+    font-weight: 650;
+    text-decoration: none;
+    transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+
+    &:hover { color: #fff; background: #263C31; box-shadow: 0 8px 18px rgba(38, 60, 49, .18); transform: translateY(-2px); }
+    &:focus-visible { outline: 3px solid var(--kn-honey); outline-offset: 3px; }
+    i { transition: transform .2s ease; }
+    &:hover i { transform: translate(2px, -2px); }
+}
+@media (max-width: 575.98px) {
+    .kn-contact-info-card, .kn-contact-map-card { border-radius: var(--kn-radius-md); }
+    .kn-contact-info-item { align-items: flex-start; gap: .75rem; padding: .8rem; }
+    .kn-contact-info-item__icon { width: 2.5rem; height: 2.5rem; }
+    .kn-contact-info-item__text, .kn-contact-info-item__link { font-size: .91rem; }
+    .kn-contact-map-card__visual { height: 180px; }
+    .kn-contact-map-card__content { padding-top: 1.35rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .kn-contact-info-item__arrow, .kn-contact-map-card__link, .kn-contact-map-card__link i { transition: none; }
+}
+
+.kn-contact-map-card { display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; }
 
 /* Halaman Layanan Publik: alur warga dan persyaratan dokumen. */
 .kn-public-services {
