@@ -43,23 +43,23 @@
 
     <section class="kn-home-stats" aria-label="Sekilas Kelurahan Kinilow">
         <div class="container">
-            <div class="kn-home-stats__grid" data-reveal>
-                <article class="kn-home-stat">
+            <div class="kn-home-stats__grid" data-home-stats>
+                <article class="kn-home-stat" data-home-stat="0">
                     <span class="kn-home-stat__icon"><i class="bi bi-map" aria-hidden="true"></i></span>
                     <span class="kn-home-stat__value" data-countup="6" data-countup-decimals="2" data-countup-suffix=" km²">6,00 km²</span>
                     <span class="kn-home-stat__label">Luas wilayah</span>
                 </article>
-                <article class="kn-home-stat">
+                <article class="kn-home-stat" data-home-stat="1">
                     <span class="kn-home-stat__icon"><i class="bi bi-houses" aria-hidden="true"></i></span>
                     <span class="kn-home-stat__value" data-countup="7" data-countup-suffix="">7</span>
                     <span class="kn-home-stat__label">Lingkungan</span>
                 </article>
-                <article class="kn-home-stat">
+                <article class="kn-home-stat" data-home-stat="2">
                     <span class="kn-home-stat__icon"><i class="bi bi-thermometer-snow" aria-hidden="true"></i></span>
                     <span class="kn-home-stat__value" data-countup="700" data-countup-prefix="± " data-countup-suffix=" mdpl">± 700 mdpl</span>
                     <span class="kn-home-stat__label">Ketinggian rata-rata</span>
                 </article>
-                <article class="kn-home-stat">
+                <article class="kn-home-stat" data-home-stat="3">
                     <span class="kn-home-stat__icon"><i class="bi bi-people" aria-hidden="true"></i></span>
                     <span class="kn-home-stat__value" data-countup="2459" data-countup-suffix="">2.459</span>
                     <span class="kn-home-stat__label">Jiwa penduduk (BPS)</span>
@@ -79,14 +79,16 @@
                 <div class="col-lg-6">
                     <div class="kn-home-collage" role="group" aria-label="Alam dan kerajinan Kelurahan Kinilow">
                         <figure class="kn-home-collage__waterfall">
-                            <img src="{{ asset('images/patterns/air-terjun.jpeg') }}" alt="Air Terjun Kanderawatu yang dikelilingi hutan hijau" loading="lazy" decoding="async">
+                            <div class="kn-home-photo-frame kn-home-photo-frame--portrait">
+                                <img src="{{ asset('images/patterns/air-terjun.jpeg') }}" alt="Air Terjun Kanderawatu yang dikelilingi hutan hijau" loading="lazy" decoding="async">
+                            </div>
                             <figcaption>Air Terjun Kanderawatu</figcaption>
                         </figure>
                         <figure class="kn-home-collage__craft">
-                            <img src="{{ asset('images/patterns/anyaman.png') }}" alt="Kerajinan anyaman bambu Kinilow" loading="lazy" decoding="async">
-                            <figcaption>Anyaman bambu Kinilow</figcaption>
+                            <div class="kn-home-photo-frame kn-home-photo-frame--square">
+                                <img src="{{ asset('images/patterns/anyaman.png') }}" alt="Anyaman bambu Kinilow" loading="lazy" decoding="async">
+                            </div>
                         </figure>
-                        <span class="kn-home-collage__seal" aria-hidden="true"><i class="bi bi-flower1"></i><span>Alam &amp;<br>budaya</span></span>
                     </div>
                 </div>
             </div>

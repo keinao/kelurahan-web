@@ -17,9 +17,9 @@
                         <button type="button" class="kn-facility-filter" data-facility-filter="{{ $key }}" aria-pressed="false">{{ $label }}</button>
                     @endforeach
                 </nav>
-                <div class="row g-4" id="facility-grid">
+                <div class="kn-facility-grid" id="facility-grid">
                     @foreach($fasilitas as $index => $item)
-                        <div class="col-12 col-md-6 col-xl-4" data-facility-card data-category="{{ $item['category_key'] }}">
+                        <div data-facility-card data-category="{{ $item['category_key'] }}">
                             <article class="kn-facility-card h-100">
                                 @if(!empty($item['photos']))
                                     <button

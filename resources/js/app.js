@@ -5,8 +5,53 @@ import * as bootstrap from 'bootstrap';
 
 window.bootstrap = bootstrap;
 document.documentElement.classList.add('js');
-const revealElements = document.querySelectorAll('[data-reveal]');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const siteNavs = document.querySelectorAll('.kn-site-nav');
+let previousNavScrollY = window.scrollY;
+window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    const scrollingUp = currentScrollY < previousNavScrollY;
+    const scrollingDown = currentScrollY > previousNavScrollY;
+
+    siteNavs.forEach((nav) => {
+        if (currentScrollY <= 60 || scrollingUp) nav.classList.remove('is-scroll-hidden');
+        else if (scrollingDown) nav.classList.add('is-scroll-hidden');
+    });
+    previousNavScrollY = currentScrollY;
+}, { passive: true });
+
+const homeNav = document.querySelector('.kn-site-nav--home');
+if (homeNav) {
+    const updateHomeNav = () => homeNav.classList.toggle('is-scrolled', window.scrollY > 60);
+    updateHomeNav();
+    window.addEventListener('scroll', updateHomeNav, { passive: true });
+}
+
+const homeStats = document.querySelector('[data-home-stats]');
+if (homeStats) {
+    let statsRevealed = false;
+    let statsObserver;
+    const revealHomeStats = () => {
+        if (statsRevealed || window.scrollY <= 40 || homeStats.getBoundingClientRect().top >= window.innerHeight) return;
+        statsRevealed = true;
+        homeStats.classList.add('is-visible');
+        statsObserver?.disconnect();
+        window.removeEventListener('scroll', revealHomeStats);
+        window.removeEventListener('resize', revealHomeStats);
+    };
+
+    if ('IntersectionObserver' in window && !reduceMotion) {
+        statsObserver = new IntersectionObserver((entries) => {
+            if (entries.some((entry) => entry.isIntersecting)) revealHomeStats();
+        }, { threshold: 0.12 });
+        statsObserver.observe(homeStats);
+    }
+    window.addEventListener('scroll', revealHomeStats, { passive: true });
+    window.addEventListener('resize', revealHomeStats);
+    revealHomeStats();
+}
+const revealElements = document.querySelectorAll('[data-reveal]');
 
 if ('IntersectionObserver' in window && !reduceMotion) {
     const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -44,7 +89,7 @@ if (counters.length) {
                 const end = Number(element.dataset.countup);
                 const decimals = Number(element.dataset.countupDecimals || 0);
                 const prefix = element.dataset.countupPrefix || ''; const suffix = element.dataset.countupSuffix || '';
-                const duration = 1050;
+                const duration = 1400;
                 let startTime;
 
                 const tick = (time) => {
@@ -60,7 +105,8 @@ if (counters.length) {
                     if (progress < 1) requestAnimationFrame(tick);
                 };
 
-                requestAnimationFrame(tick);
+                const homeStatIndex = Number(element.closest('[data-home-stat]')?.dataset.homeStat || 0);
+                window.setTimeout(() => requestAnimationFrame(tick), homeStatIndex * 450);
                 observer.unobserve(element);
             });
         }, { threshold: 0.7 });

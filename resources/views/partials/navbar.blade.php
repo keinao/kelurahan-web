@@ -10,7 +10,7 @@
     ];
 @endphp
 <header>
-    <nav class="kn-site-nav navbar navbar-expand-xl sticky-top" aria-label="Navigasi utama">
+    <nav class="kn-site-nav navbar navbar-expand-xl {{ request()->routeIs('beranda') ? 'kn-site-nav--home' : 'sticky-top' }}" aria-label="Navigasi utama">
         <div class="container d-flex align-items-center">
             <a class="kn-wordmark" href="{{ route('beranda') }}">
                 @if (file_exists(public_path('images/patterns/logo-tomohon.png')))
