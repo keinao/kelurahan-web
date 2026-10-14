@@ -4,6 +4,9 @@
     <ol class="kn-org-chart__tree">
         <li class="kn-org-chart__root">
             <x-official-card :person="$struktur['lurah']" />
+            @if(!empty($struktur['sekretaris']))
+                <x-official-card :person="$struktur['sekretaris']" />
+            @endif
             <ol class="kn-org-chart__branches" aria-label="Seksi dan perangkat pelaksana">
                 @foreach($struktur['seksi'] as $seksi)
                     <li class="kn-org-chart__branch">
