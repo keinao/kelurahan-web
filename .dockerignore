@@ -1,0 +1,17 @@
+.git
+.github
+node_modules
+vendor
+.env
+.env.*
+.phpunit.cache
+.phpunit.result.cache
+tests
+phpunit.xml
+storage/*.key
+database/*.sqlite*
+ALUR PELAYANAN.txt
+perbandingan-layout.txt
+peta adm kinilow.jpeg
+GAMBARAN UMUM K-WPS Office.docx
+*.md
