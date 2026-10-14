@@ -63,6 +63,10 @@
           <p class="kn-public-kicker">Siapkan berkas</p>
           <h2 id="persyaratan-heading">Persyaratan dokumen</h2>
           <p>Pilih jenis layanan untuk melihat daftar persyaratannya.</p>
+          <p class="kn-dukcapil-note kn-dukcapil-note--intro">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5" /></svg>
+            <span>Beberapa layanan, seperti KK dan akta kelahiran atau kematian, diproses lewat aplikasi e-Dukcapil Tomohon. Layanan yang memakai aplikasi ini ditandai dengan catatan di dalamnya.</span>
+          </p>
         </div>
 
         <div class="kn-public-category-list">
@@ -105,7 +109,11 @@
               </details>
               <details>
                 <summary>Kartu Keluarga baru</summary>
-                <div class="kn-public-accordion__body"><ul>
+                <div class="kn-public-accordion__body"><p class="kn-dukcapil-note">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5" /></svg>
+                  <span>Berkas layanan ini diunggah ke aplikasi e-Dukcapil Tomohon. Siapkan semua berkas di bawah ini dalam bentuk foto atau hasil pindai yang jelas.</span>
+                </p>
+                  <ul>
                   <li>Formulir permohonan Kartu Keluarga dari kelurahan yang ditandatangani Lurah</li>
                   <li>Formulir isian biodata (F1.01) dari kelurahan yang ditandatangani Lurah</li>
                   <li>Akta perkawinan, akta perceraian, atau akta kematian</li>
@@ -131,7 +139,11 @@
             <div class="kn-public-accordion">
               <details>
                 <summary>Perubahan KK karena kelahiran</summary>
-                <div class="kn-public-accordion__body"><ul>
+                <div class="kn-public-accordion__body"><p class="kn-dukcapil-note">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5" /></svg>
+                  <span>Berkas layanan ini diunggah ke aplikasi e-Dukcapil Tomohon. Siapkan semua berkas di bawah ini dalam bentuk foto atau hasil pindai yang jelas.</span>
+                </p>
+                  <ul>
                   <li>Kartu Keluarga lama</li>
                   <li>Akta kelahiran</li>
                   <li>Foto formulir F.1.15</li>
@@ -139,7 +151,11 @@
               </details>
               <details>
                 <summary>Perubahan KK karena menumpang</summary>
-                <div class="kn-public-accordion__body"><ul>
+                <div class="kn-public-accordion__body"><p class="kn-dukcapil-note">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5" /></svg>
+                  <span>Berkas layanan ini diunggah ke aplikasi e-Dukcapil Tomohon. Siapkan semua berkas di bawah ini dalam bentuk foto atau hasil pindai yang jelas.</span>
+                </p>
+                  <ul>
                   <li>Kartu Keluarga lama</li>
                   <li>Kartu Keluarga yang akan ditumpangi</li>
                   <li>Surat keterangan pindah atau pindah datang bagi penduduk yang pindah dalam wilayah NKRI; surat keterangan datang dari luar negeri yang diterbitkan oleh instansi pelaksana bagi WNI yang datang dari luar negeri karena pindah</li>
@@ -154,7 +170,11 @@
               </details>
               <details>
                 <summary>Perubahan KK karena pengurangan anggota</summary>
-                <div class="kn-public-accordion__body"><ul>
+                <div class="kn-public-accordion__body"><p class="kn-dukcapil-note">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5" /></svg>
+                  <span>Berkas layanan ini diunggah ke aplikasi e-Dukcapil Tomohon. Siapkan semua berkas di bawah ini dalam bentuk foto atau hasil pindai yang jelas.</span>
+                </p>
+                  <ul>
                   <li>Kartu Keluarga lama</li>
                   <li>Fotokopi akta kematian</li>
                   <li>Surat keterangan pindah atau pindah datang bagi penduduk yang pindah dalam wilayah NKRI, atau surat keterangan datang dari luar negeri yang diterbitkan oleh instansi pelaksana bagi WNI yang datang dari luar negeri karena pindah</li>
@@ -164,14 +184,22 @@
               </details>
               <details>
                 <summary>Perubahan KK karena rusak atau hilang</summary>
-                <div class="kn-public-accordion__body"><ul>
+                <div class="kn-public-accordion__body"><p class="kn-dukcapil-note">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5" /></svg>
+                  <span>Berkas layanan ini diunggah ke aplikasi e-Dukcapil Tomohon. Siapkan semua berkas di bawah ini dalam bentuk foto atau hasil pindai yang jelas.</span>
+                </p>
+                  <ul>
                   <li>Surat keterangan hilang dari kepolisian</li>
                   <li>Kartu Keluarga yang rusak</li>
                 </ul></div>
               </details>
               <details>
                 <summary>Perubahan elemen data pada KK</summary>
-                <div class="kn-public-accordion__body"><ul>
+                <div class="kn-public-accordion__body"><p class="kn-dukcapil-note">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5" /></svg>
+                  <span>Berkas layanan ini diunggah ke aplikasi e-Dukcapil Tomohon. Siapkan semua berkas di bawah ini dalam bentuk foto atau hasil pindai yang jelas.</span>
+                </p>
+                  <ul>
                   <li>Kartu Keluarga asli (catatan perubahan yang dimaksud)</li>
                   <li>Fotokopi akta kelahiran (1), (2), dan (3) bagi yang ada perubahan elemen data di KK</li>
                   <li>Fotokopi akta perkawinan, kematian, atau perceraian untuk perubahan status</li>
@@ -180,7 +208,11 @@
               </details>
               <details>
                 <summary>Perubahan KK karena pindah (kelurahan/kecamatan)</summary>
-                <div class="kn-public-accordion__body"><ul>
+                <div class="kn-public-accordion__body"><p class="kn-dukcapil-note">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5" /></svg>
+                  <span>Berkas layanan ini diunggah ke aplikasi e-Dukcapil Tomohon. Siapkan semua berkas di bawah ini dalam bentuk foto atau hasil pindai yang jelas.</span>
+                </p>
+                  <ul>
                   <li>Surat keterangan pindah WNI (antar kelurahan atau kecamatan) dari kelurahan</li>
                   <li>Kartu Keluarga asli</li>
                   <li>Fotokopi akta perkawinan, kematian, atau perceraian</li>
@@ -195,7 +227,11 @@
             <div class="kn-public-accordion">
               <details>
                 <summary>Akta kelahiran baru</summary>
-                <div class="kn-public-accordion__body"><ul>
+                <div class="kn-public-accordion__body"><p class="kn-dukcapil-note">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5" /></svg>
+                  <span>Berkas layanan ini diunggah ke aplikasi e-Dukcapil Tomohon. Siapkan semua berkas di bawah ini dalam bentuk foto atau hasil pindai yang jelas.</span>
+                </p>
+                  <ul>
                   <li>Foto surat kelahiran dari dokter</li>
                   <li>Foto nama dan identitas saksi kelahiran</li>
                   <li>Foto Kartu Keluarga orang tua</li>
@@ -209,7 +245,11 @@
               </details>
               <details>
                 <summary>Akta kelahiran 60 hari ke atas</summary>
-                <div class="kn-public-accordion__body"><ul>
+                <div class="kn-public-accordion__body"><p class="kn-dukcapil-note">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5" /></svg>
+                  <span>Berkas layanan ini diunggah ke aplikasi e-Dukcapil Tomohon. Siapkan semua berkas di bawah ini dalam bentuk foto atau hasil pindai yang jelas.</span>
+                </p>
+                  <ul>
                   <li>Surat kelahiran dari dokter</li>
                   <li>Nama dan identitas saksi kelahiran</li>
                   <li>Kartu Keluarga orang tua</li>
@@ -224,7 +264,11 @@
               </details>
               <details>
                 <summary>Akta kelahiran usia 1–16 tahun</summary>
-                <div class="kn-public-accordion__body"><ul>
+                <div class="kn-public-accordion__body"><p class="kn-dukcapil-note">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5" /></svg>
+                  <span>Berkas layanan ini diunggah ke aplikasi e-Dukcapil Tomohon. Siapkan semua berkas di bawah ini dalam bentuk foto atau hasil pindai yang jelas.</span>
+                </p>
+                  <ul>
                   <li>Surat kelahiran dari dokter</li>
                   <li>Nama dan identitas saksi kelahiran</li>
                   <li>Kartu Keluarga orang tua</li>
@@ -238,7 +282,11 @@
               </details>
               <details>
                 <summary>Akta kelahiran usia 17 tahun ke atas</summary>
-                <div class="kn-public-accordion__body"><ul>
+                <div class="kn-public-accordion__body"><p class="kn-dukcapil-note">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5" /></svg>
+                  <span>Berkas layanan ini diunggah ke aplikasi e-Dukcapil Tomohon. Siapkan semua berkas di bawah ini dalam bentuk foto atau hasil pindai yang jelas.</span>
+                </p>
+                  <ul>
                   <li>Surat kelahiran dari dokter</li>
                   <li>Nama dan identitas saksi kelahiran</li>
                   <li>Kartu Keluarga orang tua</li>
@@ -253,7 +301,11 @@
               </details>
               <details>
                 <summary>Akta kelahiran hilang atau rusak</summary>
-                <div class="kn-public-accordion__body"><ul>
+                <div class="kn-public-accordion__body"><p class="kn-dukcapil-note">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5" /></svg>
+                  <span>Berkas layanan ini diunggah ke aplikasi e-Dukcapil Tomohon. Siapkan semua berkas di bawah ini dalam bentuk foto atau hasil pindai yang jelas.</span>
+                </p>
+                  <ul>
                   <li>Fotokopi Kartu Keluarga</li>
                   <li>Surat keterangan hilang dari kepolisian bagi akta kelahiran yang hilang</li>
                   <li>Fotokopi akta kelahiran</li>
@@ -267,7 +319,11 @@
             <div class="kn-public-accordion">
               <details>
                 <summary>Akta kematian</summary>
-                <div class="kn-public-accordion__body"><ul>
+                <div class="kn-public-accordion__body"><p class="kn-dukcapil-note">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5" /></svg>
+                  <span>Berkas layanan ini diunggah ke aplikasi e-Dukcapil Tomohon. Siapkan semua berkas di bawah ini dalam bentuk foto atau hasil pindai yang jelas.</span>
+                </p>
+                  <ul>
                   <li>Surat keterangan kematian dari kelurahan</li>
                   <li>Formulir pelaporan kematian dari kelurahan</li>
                   <li>Surat keterangan kematian dari rumah sakit</li>

@@ -1629,3 +1629,36 @@ $kinilow-sun: #F2E7C8;
 .kn-site-nav { transition: transform .28s ease; }
 .kn-site-nav.is-scroll-hidden { transform: translateY(-110%); }
 .kn-site-nav--home { transition: transform .28s ease, background-color .35s ease, box-shadow .35s ease; }
+
+.kn-dukcapil-note {
+    display: flex;
+    min-width: 0;
+    align-items: flex-start;
+    gap: .55rem;
+    margin: 0 0 .85rem;
+    padding: .7rem .8rem;
+    color: $deep-forest;
+    background: #edf2eb;
+    border: 1px solid rgba($deep-forest, .18);
+    border-radius: var(--kn-radius-sm);
+    font-size: .86rem;
+    line-height: 1.5;
+
+    svg {
+        width: 1rem;
+        height: 1rem;
+        flex: 0 0 auto;
+        margin-top: .16rem;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.8;
+    }
+
+    span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+}
+.kn-dukcapil-note--intro { margin-top: .85rem; }
